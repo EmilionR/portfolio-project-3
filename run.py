@@ -1,5 +1,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+username = ""
+
 def initialize_game():
     """
     Initialize game state and relevant variables
@@ -23,6 +25,13 @@ def intro_message():
           "\n"
           "\n")
 
+def request_name():
+    """
+    Request player name input
+    """
+    print("What's your name?")
+    username = input()
+    print(f"Welcome, {username}!\nLet's get started.")
 
 def show_high_score():
     """
@@ -67,5 +76,5 @@ def restart_game():
 
 def main():
     intro_message()
-
+    request_name()
 main()
