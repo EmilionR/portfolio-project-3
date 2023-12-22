@@ -1,17 +1,5 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-def intro_message():
-    """
-    Displays game logo and welcome message
-    """
-    print("\n"
-          "\n"
-          "                                  Europe  Quiz                                  "
-          "\n"
-          "\n")
-
-intro_message()
-
 def initialize_game():
     """
     Initialize game state and relevant variables
@@ -21,6 +9,20 @@ def create_questions():
     """
     Load questions from file
     """
+
+def intro_message():
+    """
+    Displays game logo and welcome message
+    """
+    print("\n"
+          "\n"
+          "                                  Europe  Quiz                                  "
+          "\n"
+          "\n"
+          "                         Answer Questions about Europe                          "
+          "\n"
+          "\n")
+
 
 def show_high_score():
     """
@@ -62,3 +64,8 @@ def restart_game():
     """
     Start a new round of the quiz
     """
+
+def main():
+    intro_message()
+
+main()
