@@ -30,6 +30,8 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 ## Contents
 
+* [How to Play](#how-to-play)
+
 * [Development Process](#development-process)
 
 * [Features](#Features)
@@ -62,6 +64,12 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
   * [Content](#Content)
   * [Media](#Media)
   * [Tutorials & Code Used](#tutorials--code-used)
+
+## How to Play
+
+The quiz game is quite straightforward. The game presents a question and four alternatives to choose from. The player inputs their selection, and the game checks if it is correct. If it is correct, the game increments the player's score. Otherwise, the player is told that the answer is incorrect.
+
+WHen the game is over, the player can choose to start over from the beginning or quit. If their score is good enough, it will appear on the list of high scores.
 
 ## Development Process
 
