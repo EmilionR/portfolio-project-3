@@ -1,5 +1,16 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+def intro_message():
+    """
+    Displays game logo and welcome message
+    """
+    print("\n"
+          "\n"
+          "                                  Europe  Quiz                                  "
+          "\n"
+          "\n")
+
+intro_message()
 
 def initialize_game():
     """
