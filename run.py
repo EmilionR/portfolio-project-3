@@ -101,14 +101,17 @@ def ask_question():
     """
     Present the next question and the alternatives for answers
     """
-    print(question_list[0])
+    print("Next question!\n")
+    while True:
+        print(f"{question_list[0]}")
+        answer = input("Your answer: \n").upper()
+        if answer != "A" and answer != "B" and answer != "C" and answer != "D":
+            print("Invalid input.\n")
+        else:
+            check_if_correct(answer)
+            break
 
-def player_answer():
-    """
-    Player inputs their answer
-    """
-
-def check_if_correct():
+def check_if_correct(answer):
     """
     Check if the answer given is correct,
     display result and award points if correct
