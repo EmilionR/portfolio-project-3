@@ -11,6 +11,17 @@ def create_questions():
     """
     Load questions from file
     """
+    question_list = [] # List of questions
+    question_lines = [] # Temporary container for question+answers broken into lines
+    questions_file = open("questions.txt", "r") # Load questions from text file
+    lines_counted = 0 # Counter used for breaking file into even chunks
+    for line in questions_file:
+        question_lines.append(line) # Add line to question
+        lines_counted += 1
+        if lines_counted == 6: # If all lines for the current question have been read
+            question_list.append(question_lines) # Add processed question to list of questions
+            question_lines = [] # Clear the temporary list
+            lines_counted = 0 # Reset the counter
 
 def intro_message():
     """
@@ -116,6 +127,6 @@ def restart_game():
     """
 
 def main():
-    intro_message()
+    create_questions()
 
 main()
