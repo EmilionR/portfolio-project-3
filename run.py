@@ -2,6 +2,8 @@
 
 username = ""
 question_list = []
+answer_list = []
+question_length = 7 # Determine how many lines to extract for each question
 
 def initialize_game():
     """
@@ -10,19 +12,29 @@ def initialize_game():
 
 def create_questions():
     """
-    Load questions from file
+    Load questions from file and loop through it,
+    grouping a certain number of lines at a time,
+    then append each group (which is one question with answer options) to a list.
+    The first line of each chunk is the correct anser, which gets
+    assigned to a separate list and then cleared
     """
     global question_list # List of questions
+    global answer_list #List of correct answers
+    global question_length
     question_lines = "" # Temporary container for question+answers broken into lines
     questions_file = open("questions.txt", "r") # Load questions from text file
     lines_counted = 0 # Counter used for breaking file into even chunks
     for line in questions_file:
+        if lines_counted == 0: #Check for answer
+            answer_list.append(line[0])
+            line = ""
         question_lines += line # Add line to question
         lines_counted += 1
-        if lines_counted == 6: # If all lines for the current question have been read
+        if lines_counted == question_length: # If all lines for the current question have been read
             question_list.append(question_lines) # Add processed question to list of questions
             question_lines = [] # Clear the temporary list
             lines_counted = 0 # Reset the counter
+    print(answer_list)
 
 def intro_message():
     """
@@ -116,6 +128,7 @@ def check_if_correct(answer):
     Check if the answer given is correct,
     display result and award points if correct
     """
+
 
 def game_over():
     """
