@@ -16,6 +16,7 @@ def intro_message():
     """
     Displays game logo and welcome message
     """
+    choice = ""
     print("\n"
           "\n"
           "                                  Europe  Quiz                                  "
@@ -23,10 +24,22 @@ def intro_message():
           "\n"
           "                         Answer Questions about Europe                          "
           "\n"
-          "\n"
-          "1. Start Game"
-          "2. High Scores"
-          "3. How to Play")
+          "\n")
+          
+    while True:
+        print("1. Start Game\n"
+        "2. High Scores\n"
+        "3. How to Play\n")
+        choice = input("Please select(1, 2, or 3)\n")
+        if choice == "1":
+            start_round()
+        elif choice == "2":
+            show_high_score()
+        elif choice == "3":
+            how_to_play()
+        else:
+            print("Invalid option.")
+
 
 def request_name():
     """
@@ -34,7 +47,7 @@ def request_name():
     """
     print("Welcome to the Europe Quiz!")
     while(True): #Keep requesting name until a valid name is given
-        username = input("What's your name?")
+        username = input("What's your name?\n")
         if username == "" or username.isspace(): #Check if name is left blank
             print("Surely, you must have a name.")
         elif username.isnumeric(): #Check if username only contains numbers
@@ -56,6 +69,8 @@ def start_round():
     """
     Begin the game
     """
+    request_name()
+    ask_question()
 
 def ask_question():
     """
@@ -90,5 +105,5 @@ def restart_game():
 
 def main():
     intro_message()
-    request_name()
+
 main()
