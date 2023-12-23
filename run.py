@@ -32,7 +32,7 @@ def request_name():
     print("Welcome to the Europe Quiz!")
     while(True): #Keep requesting name until a valid name is given
         username = input("What's your name?")
-        if username == "": #Check if name is left blank
+        if username == "" or username.isspace(): #Check if name is left blank
             print("Surely, you must have a name.")
         elif username.isnumeric(): #Check if username only contains numbers
             print(f"{username}... Please enter a name, not your number.")
