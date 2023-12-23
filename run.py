@@ -40,6 +40,18 @@ def intro_message():
         else:
             print("Invalid option.")
 
+def how_to_play():
+    print("\n"
+          "\n"
+          "                                  How to Play                                   "
+          "\n"
+          "\n"
+          "\n"
+          "Each question comes with four potential answers : A, B, C, and D.\n"
+          "Choose one by typing in the corresponding letter.\n"
+          "Each correct answer gives you one point.\n"
+          "See if you can get them all right and get your name on the scoreboard.\n"
+          )
 
 def request_name():
     """
