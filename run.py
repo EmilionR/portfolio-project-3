@@ -25,15 +25,15 @@ def create_questions():
     questions_file = open("questions.txt", "r") # Load questions from text file
     lines_counted = 0 # Counter used for breaking file into even chunks
     for line in questions_file:
-        if lines_counted == 0: #Check for answer
-            answer_list.append(line[0])
-            line = ""
+        if lines_counted == 0: # Check for first line of chunk, containing the answer
+            answer_list.append(line[0]) # Append the answer to the list of correct answers
+            line = "" # Clear the line so that it does not appear in the question
         question_lines += line # Add line to question
         lines_counted += 1
         if lines_counted == question_length: # If all lines for the current question have been read
             question_list.append(question_lines) # Add processed question to list of questions
             question_lines = [] # Clear the temporary list
-            lines_counted = 0 # Reset the counter
+            lines_counted = 0 # Reset the line counter to start new chunk of lines
     print(answer_list)
 
 def intro_message():
