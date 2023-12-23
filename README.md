@@ -73,6 +73,10 @@ WHen the game is over, the player can choose to start over from the beginning or
 
 ## Development Process
 
+Before I began building the project, I made a flowchart to visualize how the program will operate. This flowchart not only helped to determine the order of operations for the program itself, but also gave myself clear directions on where to start and the general sequence of building it.
+
+![Concept Flowchart](documentation/flowchart.png)
+
 ## Features
 
 ### Existing Features
