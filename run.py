@@ -34,6 +34,8 @@ def request_name():
         username = input("What's your name?")
         if username == "": #Check if name is left blank
             print("Surely, you must have a name.")
+        elif username.isnumeric(): #Check if username only contains numbers
+            print(f"{username}... Please enter a name, not your number.")
         else:
             print(f"Welcome, {username}!\nLet's get started.")
 
