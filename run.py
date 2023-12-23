@@ -29,9 +29,13 @@ def request_name():
     """
     Request player name input
     """
-    print("What's your name?")
-    username = input()
-    print(f"Welcome, {username}!\nLet's get started.")
+    print("Welcome to the Europe Quiz!")
+    while(True): #Keep requesting name until a valid name is given
+        username = input("What's your name?")
+        if username == "": #Check if name is left blank
+            print("Surely, you must have a name.")
+        else:
+            print(f"Welcome, {username}!\nLet's get started.")
 
 def show_high_score():
     """
