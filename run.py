@@ -38,7 +38,7 @@ def intro_message():
           "\n"
           "\n")
           
-    while True:
+    while True: # Loop until valid input is given
         print("1. Start Game\n"
         "2. High Scores\n"
         "3. How to Play\n")
@@ -72,17 +72,17 @@ def request_name():
     """
     print("Welcome to the Europe Quiz!")
     while(True): #Keep requesting name until a valid name is given
-        username = input("What's your name?\n")
+        username = input("What's your name?\n\n")
         if username == "" or username.isspace(): #Check if name is left blank
-            print("Surely, you must have a name.")
+            print("\nSilence, huh... Surely, you must have a name.")
         elif username.isnumeric(): #Check if username only contains numbers
             print(f"{username}... Please enter a name, not your number.")
         elif len(username) > 16: #Check if username is too long
-            print("I'm sorry, that's quite long and hard to pronounce.\nDo you have a nickname?")
+            print("\nI'm sorry, that's quite long and hard to pronounce.\nPlease give me the short version.")
         elif not username.isalnum(): #Check if username contains invalid symbols
-            print("Hmm, names should not include non-alphanumeric symbols.")
+            print("\nHmm, names should not include non-alphanumeric symbols.")
         else: #Accept username and continue
-            print(f"Welcome, {username}!\nLet's get started.")
+            print(f"\nWelcome, {username}!\nLet's get started.\n")
             break
 
 def show_high_score():
