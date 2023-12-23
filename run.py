@@ -23,7 +23,10 @@ def intro_message():
           "\n"
           "                         Answer Questions about Europe                          "
           "\n"
-          "\n")
+          "\n"
+          "1. Start Game"
+          "2. High Scores"
+          "3. How to Play")
 
 def request_name():
     """
