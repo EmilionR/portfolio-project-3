@@ -4,6 +4,7 @@ username = ""
 question_list = []
 answer_list = []
 question_length = 7 # Determine how many lines to extract for each question
+current_question = 0
 
 def initialize_game():
     """
@@ -34,7 +35,6 @@ def create_questions():
             question_list.append(question_lines) # Add processed question to list of questions
             question_lines = [] # Clear the temporary list
             lines_counted = 0 # Reset the line counter to start new chunk of lines
-    print(answer_list)
 
 def intro_message():
     """
@@ -113,22 +113,27 @@ def ask_question():
     """
     Present the next question and the alternatives for answers
     """
+    global current_question
     print("Next question!\n")
     while True:
-        print(f"{question_list[0]}")
+        print(f"{question_list[current_question]}")
         answer = input("Your answer: \n").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print("Invalid input.\n")
         else:
             check_if_correct(answer)
-            break
 
 def check_if_correct(answer):
     """
     Check if the answer given is correct,
     display result and award points if correct
     """
-
+    global current_question
+    if answer == answer_list[current_question]:
+        print("CORRECT!")
+    else:
+        print("WRONG!")
+    current_question += 1
 
 def game_over():
     """
