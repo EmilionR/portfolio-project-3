@@ -1,6 +1,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 username = ""
+question_list = []
 
 def initialize_game():
     """
@@ -11,12 +12,12 @@ def create_questions():
     """
     Load questions from file
     """
-    question_list = [] # List of questions
-    question_lines = [] # Temporary container for question+answers broken into lines
+    global question_list # List of questions
+    question_lines = "" # Temporary container for question+answers broken into lines
     questions_file = open("questions.txt", "r") # Load questions from text file
     lines_counted = 0 # Counter used for breaking file into even chunks
     for line in questions_file:
-        question_lines.append(line) # Add line to question
+        question_lines += line # Add line to question
         lines_counted += 1
         if lines_counted == 6: # If all lines for the current question have been read
             question_list.append(question_lines) # Add processed question to list of questions
@@ -44,6 +45,7 @@ def intro_message():
         choice = input("Please select(1, 2, or 3)\n")
         if choice == "1":
             start_round()
+            break
         elif choice == "2":
             show_high_score()
         elif choice == "3":
@@ -99,6 +101,7 @@ def ask_question():
     """
     Present the next question and the alternatives for answers
     """
+    print(question_list[0])
 
 def player_answer():
     """
@@ -128,5 +131,6 @@ def restart_game():
 
 def main():
     create_questions()
+    intro_message()
 
 main()
