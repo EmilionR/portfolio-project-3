@@ -36,8 +36,11 @@ def request_name():
             print("Surely, you must have a name.")
         elif username.isnumeric(): #Check if username only contains numbers
             print(f"{username}... Please enter a name, not your number.")
+        elif len(username) > 16: #Check if username is too long
+            print("I'm sorry, that's quite long and hard to pronounce. Do you have a nickname?")
         else:
             print(f"Welcome, {username}!\nLet's get started.")
+            break
 
 def show_high_score():
     """
