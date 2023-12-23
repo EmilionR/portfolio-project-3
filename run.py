@@ -37,8 +37,10 @@ def request_name():
         elif username.isnumeric(): #Check if username only contains numbers
             print(f"{username}... Please enter a name, not your number.")
         elif len(username) > 16: #Check if username is too long
-            print("I'm sorry, that's quite long and hard to pronounce. Do you have a nickname?")
-        else:
+            print("I'm sorry, that's quite long and hard to pronounce.\nDo you have a nickname?")
+        elif not username.isalnum(): #Check if username contains invalid symbols
+            print("Hmm, names should not include non-alphanumeric symbols.")
+        else: #Accept username and continue
             print(f"Welcome, {username}!\nLet's get started.")
             break
 
