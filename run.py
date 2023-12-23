@@ -33,8 +33,9 @@ def create_questions():
         lines_counted += 1
         if lines_counted == question_length: # If all lines for the current question have been read
             question_list.append(question_lines) # Add processed question to list of questions
-            question_lines = [] # Clear the temporary list
+            question_lines = "" # Clear the temporary list
             lines_counted = 0 # Reset the line counter to start new chunk of lines
+    print(question_list)
 
 def intro_message():
     """
@@ -113,7 +114,6 @@ def ask_question():
     """
     Present the next question and the alternatives for answers
     """
-    global current_question
     print("Next question!\n")
     while True:
         print(f"{question_list[current_question]}")
