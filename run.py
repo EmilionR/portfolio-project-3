@@ -147,7 +147,7 @@ def game_over():
     Calculate final score and check if hi-score is achieved
     """
     print(f"GAME OVER!\n\nFinal score: {score}\n")
-    update_high_score()
+    compare_scores(score, get_high_scores())
     print("Play Again?\n")
     while True:
         choice = input("Y/N\n").upper()
@@ -158,18 +158,20 @@ def game_over():
             restart_game()
             break
 
-def update_high_score():
+def update_high_score(highscores):
     """
     Update high score list
     """
-    get_high_scores()
-    f = open("high-score.txt", "a")
-    f.write(f"{username}\n{score}")
+    scores = "" # Temporary string for converting data
+    for i in range(10): # Iterate through 10 indexes of highscores list
+        scores += f"{highscores[i][0]}\n{str(highscores[i][1])}\n" # Add name and score to separate lines
+    f = open("high-score.txt", "w") # Open the high-score file
+    f.write(scores) # Write 
     f.close()
     
 def get_high_scores():
     """
-    Read high scores from list
+    Read high scores from text file
     """
     scores = [] # List of names and scores
     with open('high-score.txt') as f: # Read from high-score.txt
@@ -178,6 +180,16 @@ def get_high_scores():
             # Name is the current line, score is the next line cast to an integer
             scores.append([line.strip(), int(next(f).strip())])
     return scores
+
+def compare_scores(score, scoreboard):
+    """
+    Compare score to scores in scoreboard
+    """
+    highscores = scoreboard
+    print("Comparing scores")
+    if len(highscores) < 10:
+        highscores.append([username, score])
+        update_high_score(highscores)
 
 def restart_game():
     """
@@ -190,8 +202,7 @@ def restart_game():
     start_round() # Start a new round of the game
 
 def main():
-    get_high_scores()
-    # create_questions()
-    # intro_message()
+    create_questions()
+    intro_message()
 
 main()
