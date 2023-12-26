@@ -171,19 +171,13 @@ def get_high_scores():
     """
     Read high scores from list
     """
-    names = []
-    scores = []
-    f = open("high-score.txt", "r")
-    score_lines = ""
-    lines_counted = 0
-    for line in f:
-        if lines_counted == 0: # Check for first line of pair, containing the name
-            names.append(line) # Add name to list of names
-            lines_counted += 1 # Increment line counter
-        elif lines_counted == 1: # Check for second line of pair, containing the score
-            scores.append(line) # Add score to list of scores
-            lines_counted = 0 # Reset line counter
-    f.close()
+    scores = [] # List of names and scores
+    with open('high-score.txt') as f: # Read from high-score.txt
+        for line in f:
+            # Append a pair of name and score to list,
+            # Name is the current line, score is the next line cast to an integer
+            scores.append([line.strip(), int(next(f).strip())])
+    return scores
 
 def restart_game():
     """
@@ -196,7 +190,8 @@ def restart_game():
     start_round() # Start a new round of the game
 
 def main():
-    create_questions()
-    intro_message()
+    get_high_scores()
+    # create_questions()
+    # intro_message()
 
 main()
