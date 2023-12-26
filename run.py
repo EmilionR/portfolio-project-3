@@ -103,7 +103,15 @@ def show_high_score():
     """
     Show list of high scores
     """
-
+    scores = get_high_scores()
+    print("--HIGH SCORES--")
+    for i in range(10): # Count to 10
+        entry = "----" # Placeholder for empty entries
+        if i < len(scores): # Check if i is within list bounds
+            entry = f"{scores[i][0]}: {scores[i][1]}" # Write name and score if index is found
+        print(f"{i+1}) {entry}")  # Printing i+1 to compensate for 0 index
+    print("\n")
+    
 def start_round():
     """
     Begin the game
