@@ -116,12 +116,15 @@ def ask_question():
     """
     print("Next question!\n")
     while True:
-        print(f"{question_list[current_question]}")
-        answer = input("Your answer: \n").upper()
-        if answer != "A" and answer != "B" and answer != "C" and answer != "D":
-            print("Invalid input.\n")
+        if current_question < len(question_list):
+            print(f"{question_list[current_question]}")
+            answer = input("Your answer: \n").upper()
+            if answer != "A" and answer != "B" and answer != "C" and answer != "D":
+                print("Invalid input.\n")
+            else:
+                check_if_correct(answer)
         else:
-            check_if_correct(answer)
+            break
 
 def check_if_correct(answer):
     """
@@ -134,11 +137,22 @@ def check_if_correct(answer):
     else:
         print("WRONG!")
     current_question += 1
+    if current_question >= len(question_list):
+        game_over()
 
 def game_over():
     """
     Calculate final score and check if hi-score is achieved
     """
+    print("GAME OVER!\n\nPlay Again?\n")
+    while True:
+        choice = input("Y/N\n").upper()
+        if choice == "N":
+            print("Thank you for playing.")
+            break
+        elif choice == "Y":
+            restart_game()
+            break
 
 def update_high_score():
     """
