@@ -163,6 +163,8 @@ def restart_game():
     """
     Start a new round of the quiz
     """
+    current_question = 0
+    start_round()
 
 def main():
     create_questions()
