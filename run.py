@@ -186,10 +186,11 @@ def compare_scores(score, scoreboard):
     Compare score to scores in scoreboard
     """
     highscores = scoreboard
-    print("Comparing scores")
-    if len(highscores) < 10:
-        highscores.append([username, score])
-        update_high_score(highscores)
+    highscores.append([username, score]) # Add score to list of highscores
+    highscores.sort(key = lambda scr: scr[1]) # Sort list by value of second index in sublist
+    if len(highscores) < 10: # Check if list has more than 10 scores
+        highscores = highscores[:10] # Trim list to a length of 10
+    print(highscores)
 
 def restart_game():
     """
