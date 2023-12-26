@@ -117,15 +117,12 @@ def ask_question():
     """
     print("Next question!\n")
     while True:
-        if current_question < len(question_list):
-            print(f"{question_list[current_question]}")
-            answer = input("Your answer: \n").upper()
-            if answer != "A" and answer != "B" and answer != "C" and answer != "D":
-                print("Invalid input.\n")
-            else:
-                check_if_correct(answer)
+        print(f"{question_list[current_question]}")
+        answer = input("Your answer: \n").upper()
+        if answer != "A" and answer != "B" and answer != "C" and answer != "D":
+            print("Invalid input.\n")
         else:
-            break
+            check_if_correct(answer)
 
 def check_if_correct(answer):
     """
@@ -168,7 +165,10 @@ def restart_game():
     """
     Start a new round of the quiz
     """
+    global current_question
+    global score
     current_question = 0
+    score = 0
     start_round()
 
 def main():
