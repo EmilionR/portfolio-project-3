@@ -5,6 +5,7 @@ question_list = []
 answer_list = []
 question_length = 7 # Determine how many lines to extract for each question
 current_question = 0
+score = 0
 
 def initialize_game():
     """
@@ -132,11 +133,15 @@ def check_if_correct(answer):
     display result and award points if correct
     """
     global current_question
+    global score
     if answer == answer_list[current_question]:
         print("CORRECT!")
+        score += 1
     else:
         print("WRONG!")
+    print(f"You have {score} points!\n")
     current_question += 1
+    input("Press ENTER to continue\n\n")
     if current_question >= len(question_list):
         game_over()
 
@@ -148,7 +153,7 @@ def game_over():
     while True:
         choice = input("Y/N\n").upper()
         if choice == "N":
-            print("Thank you for playing.")
+            print("Thank you for playing.\n")
             break
         elif choice == "Y":
             restart_game()
