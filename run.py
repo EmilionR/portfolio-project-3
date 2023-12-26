@@ -36,7 +36,6 @@ def create_questions():
             question_list.append(question_lines) # Add processed question to list of questions
             question_lines = "" # Clear the temporary list
             lines_counted = 0 # Reset the line counter to start new chunk of lines
-    print(question_list)
 
 def intro_message():
     """
@@ -137,7 +136,7 @@ def check_if_correct(answer):
     else:
         print("WRONG!")
     print(f"You have {score} points!\n")
-    current_question += 1
+    current_question += 1 # Increment question counter to get next question
     input("Press ENTER to continue\n\n")
     if current_question >= len(question_list):
         game_over()
@@ -167,9 +166,9 @@ def restart_game():
     """
     global current_question
     global score
-    current_question = 0
-    score = 0
-    start_round()
+    current_question = 0 # Reset question counter
+    score = 0 # Reset score counter
+    start_round() # Start a new round of the game
 
 def main():
     create_questions()
