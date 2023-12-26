@@ -166,7 +166,7 @@ def update_high_score(highscores):
     for i in range(10): # Iterate through 10 indexes of highscores list
         scores += f"{highscores[i][0]}\n{str(highscores[i][1])}\n" # Add name and score to separate lines
     f = open("high-score.txt", "w") # Open the high-score file
-    f.write(scores) # Write 
+    f.write(scores) # Overwrite highscore data
     f.close()
     
 def get_high_scores():
