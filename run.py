@@ -83,6 +83,7 @@ def request_name():
     """
     Request player name input
     """
+    global username
     print("Welcome to the Europe Quiz!")
     while(True): #Keep requesting name until a valid name is given
         username = input("What's your name?\n\n")
@@ -145,7 +146,9 @@ def game_over():
     """
     Calculate final score and check if hi-score is achieved
     """
-    print("GAME OVER!\n\nPlay Again?\n")
+    print(f"GAME OVER!\n\nFinal score: {score}\n")
+    update_high_score()
+    print("Play Again?\n")
     while True:
         choice = input("Y/N\n").upper()
         if choice == "N":
@@ -159,6 +162,28 @@ def update_high_score():
     """
     Update high score list
     """
+    get_high_scores()
+    f = open("high-score.txt", "a")
+    f.write(f"{username}\n{score}")
+    f.close()
+    
+def get_high_scores():
+    """
+    Read high scores from list
+    """
+    names = []
+    scores = []
+    f = open("high-score.txt", "r")
+    score_lines = ""
+    lines_counted = 0
+    for line in f:
+        if lines_counted == 0: # Check for first line of pair, containing the name
+            names.append(line) # Add name to list of names
+            lines_counted += 1 # Increment line counter
+        elif lines_counted == 1: # Check for second line of pair, containing the score
+            scores.append(line) # Add score to list of scores
+            lines_counted = 0 # Reset line counter
+    f.close()
 
 def restart_game():
     """
