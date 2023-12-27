@@ -219,8 +219,7 @@ def get_high_scores():
         for line in f:
         # Append a pair of name and score to list,
         # Name is the current line, score is the next line cast to an integer
-        print(line)
-        scores.append([line.strip(), int(next(f).strip())])
+            scores.append([line.strip(), int(next(f).strip())])
     return scores
 
 def compare_scores(score, scoreboard):
