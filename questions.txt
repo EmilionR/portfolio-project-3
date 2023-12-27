@@ -110,4 +110,79 @@ B: Gibraltar
 C: Transdnistria
 D: Liechtenstein
 
+B
+Which sea is not in Europe?
+A: Aegean sea
+B: Caspian sea
+C: Adriatic sea
+D: Sea of Marmara
 
+A
+Which one of these is not a European mountain range?
+A: The Ligurian
+B: The Carpathian
+C: The Urals
+D: The Pyrenées
+
+D
+What is the most populous country in Europe?
+A: Germany
+B: Great Britain
+C: Turkey
+D: Russia
+
+C
+What is the biggest city in Europe
+A: Paris
+B: London
+C: Moscow
+D: Madrid
+
+B
+What is the smallest sovereign state in Europe
+A: Monaco
+B: Vatican city
+C: Liechtenstein
+D: San Marino
+
+A
+Which of these countries is not at all European?
+A: Jordan
+B: Armenia
+C: Kazakhstan
+D: Georgia
+
+B
+Approximately how many people live in Europe?
+A: 680 million
+B: 740 million
+C: 820 million
+D: 1 billion
+
+D
+What's the capital of Cyprus?
+A: Valletta
+B: Heraklion
+C: Ankara
+D: Nicosia
+
+A
+The archipelago of Madeira belongs to what country?
+A: Portugal
+B: Spain
+C: Italy
+D: Greece
+
+C
+Where do you find the cities of Zürich, Bern, and Winterthur?
+A: Germany
+B: Austria
+C: Switzerland
+D: Netherlands
+
+B
+In which of these countries can you not visit the alps?
+A: Austria
+B: Andorra
+C: Slovenia
+D: France
