@@ -161,7 +161,7 @@ def game_over():
         choice = input("Y/N\n").upper()
         if choice == "N":
             print("Thank you for playing.\n")
-            break
+            exit()
         elif choice == "Y":
             restart_game()
             break
