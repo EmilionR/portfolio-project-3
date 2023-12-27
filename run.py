@@ -147,7 +147,8 @@ def ask_question():
     print("Next question!\n")
     while True:
         # Select question using a random number from question_selection,
-        # getting the index corresponding to the current question number 
+        # getting the index corresponding to the current question number
+        print(f"Question number {current_question}")
         print(f"{question_list[question_selection[current_question]]}")
         answer = input("Your answer:\n").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
