@@ -6,7 +6,7 @@ question_list = [] # List of questions
 answer_list = [] # List of correct answers
 question_selection = [] # Selected questions for this round
 question_length = 7 # Determine how many lines to extract for each question
-round_length = 10 # Number of questions per round of the game
+round_length = 15 # Number of questions per round of the game
 current_question = 0
 score = 0
 
@@ -129,7 +129,7 @@ def select_questions():
     for i in range(0, amount-1): # Generate numbers from 0 to last index of questions
         rand_questions.append(i) # Add the number to 
     random.shuffle(rand_questions) # Shuffle the order of numbers
-    rand_questions = rand_questions[:10] # Cut list to first 10 numbers only
+    rand_questions = rand_questions[:round_length] # Cut list to match round length
     question_selection.extend(rand_questions) # Add rand_question indexes to question_selection
 
 def start_round():
@@ -148,7 +148,7 @@ def ask_question():
     while True:
         # Select question using a random number from question_selection,
         # getting the index corresponding to the current question number
-        print(f"Question number {current_question}")
+        print(f"Question number {current_question+1}")
         print(f"{question_list[question_selection[current_question]]}")
         answer = input("Your answer:\n").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
@@ -178,7 +178,7 @@ def check_if_correct(answer):
     print(f"You have {score} {point_or_points}!\n")
     current_question += 1 # Increment question counter to get next question
     input("Press ENTER to continue\n\n")
-    if current_question >= len(question_list):
+    if current_question >= round_length: # Check if this is the last question
         game_over()
 
 def game_over():

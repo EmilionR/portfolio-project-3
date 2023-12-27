@@ -82,7 +82,7 @@ B: Czech and Slovak
 C: Slovak and Ukrainian
 D: Ukraininan and Polish
 
-C
+D
 Which is the smallest of the following countries?
 A: France
 B: Sweden
