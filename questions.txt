@@ -27,7 +27,7 @@ C: Schweiz
 D: Sverige
 
 B
-Which of the following countries does not have red in their national flag?
+Which of the following countries does not have red in its flag?
 A: Albania
 B: Bosnia
 C: North Macedonia
@@ -63,8 +63,49 @@ D: Czechoslovakia
 
 A
 What is Hungary called in Hungarian?
-A: Magyorszag
+A: Magyország
 B: Shqiperia
 C: Suomi
 D: Deutschland
 
+A
+Two of these languages have distinct counting systems. Which?
+A: French and Danish
+B: Spanish and Portuguese
+C: Dutch and Polish
+D: Italian and Croatian
+
+B
+"Strč prst skrz krk" is a valid sentence in what languages?
+A: Polish and Czech
+B: Czech and Slovak
+C: Slovak and Ukrainian
+D: Ukraininan and Polish
+
+C
+Which is the smallest of the following countries?
+A: France
+B: Sweden
+C: Ukraine
+D: Germany
+
+D
+Before its independence, the Netherlands belonged to what country?
+A: France
+B: Germany
+C: England
+D: Spain
+
+C
+The westernmost country in Europe is...
+A: Ireland
+B: Spain
+C: Portugal
+D: Iceland
+
+D
+Which one of these is an independent country?
+A: Catalonia
+B: Gibraltar
+C: Transdnistria
+D: Liechtenstein

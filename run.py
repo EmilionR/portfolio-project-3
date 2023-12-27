@@ -1,4 +1,5 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random
 
 username = ""
 question_list = []
@@ -112,10 +113,25 @@ def show_high_score():
         print(f"{i+1}) {entry}")  # Printing i+1 to compensate for 0 index
     print("\n")
 
+def select_questions():
+    """
+    Pick a random selection of questions for the game.
+    I generate numbers in sequence and then shuffle them,
+    rather than generating x random numbers.
+    This is to ensure that numbers are unique and within range.
+    """
+    amount = len(question_list) # Number of questions to choose from
+    rand_questions = [] # List of random question selections
+    for i in range(0, amount-1): # Generate numbers from 0 to last index of questions
+        rand_questions.append(i) # Add the number to 
+    random.shuffle(rand_questions) # Shuffle the order of numbers
+    rand_questions = rand_questions[:10] # Cut list to first 10 numbers only
+
 def start_round():
     """
     Begin the game
     """
+
     request_name()
     ask_question()
 
