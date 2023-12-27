@@ -2,9 +2,11 @@
 import random
 
 username = ""
-question_list = []
-answer_list = []
+question_list = [] # List of questions
+answer_list = [] # List of correct answers
+question_selection = [] # Selected questions for this round
 question_length = 7 # Determine how many lines to extract for each question
+round_length = 10 # Number of questions per round of the game
 current_question = 0
 score = 0
 
@@ -120,18 +122,22 @@ def select_questions():
     rather than generating x random numbers.
     This is to ensure that numbers are unique and within range.
     """
+    global question_selection
+    question_selection = [] # Reset the question selection before each round
     amount = len(question_list) # Number of questions to choose from
     rand_questions = [] # List of random question selections
     for i in range(0, amount-1): # Generate numbers from 0 to last index of questions
         rand_questions.append(i) # Add the number to 
     random.shuffle(rand_questions) # Shuffle the order of numbers
     rand_questions = rand_questions[:10] # Cut list to first 10 numbers only
+    question_selection.extend(rand_questions) #
+    print(question_selection)
 
 def start_round():
     """
     Begin the game
     """
-
+    select_questions()
     request_name()
     ask_question()
 
@@ -141,7 +147,9 @@ def ask_question():
     """
     print("Next question!\n")
     while True:
-        print(f"{question_list[current_question]}")
+        # Select question using a random number from question_selection,
+        # getting the index corresponding to the current question number 
+        print(f"{question_list[question_selection[current_question]]}")
         answer = input("Your answer:\n").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print("Invalid input.\n")
@@ -155,7 +163,9 @@ def check_if_correct(answer):
     """
     global current_question
     global score
-    if answer == answer_list[current_question]:
+    # Check if the answer matches the answer in the [current_question]
+    # index of question_selection list
+    if answer == answer_list[question_selection[current_question]]:
         print("CORRECT!")
         score += 1
     else:
