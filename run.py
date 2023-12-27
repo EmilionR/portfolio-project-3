@@ -111,7 +111,7 @@ def show_high_score():
             entry = f"{scores[i][0]}: {scores[i][1]}" # Write name and score if index is found
         print(f"{i+1}) {entry}")  # Printing i+1 to compensate for 0 index
     print("\n")
-    
+
 def start_round():
     """
     Begin the game
@@ -126,7 +126,7 @@ def ask_question():
     print("Next question!\n")
     while True:
         print(f"{question_list[current_question]}")
-        answer = input("Your answer: \n").upper()
+        answer = input("Your answer:\n").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print("Invalid input.\n")
         else:
@@ -173,6 +173,8 @@ def update_high_score(highscores):
     scores = "" # Temporary string for converting data
     for i in range(10): # Iterate through 10 indexes of highscores list
         scores += f"{highscores[i][0]}\n{str(highscores[i][1])}\n" # Add name and score to separate lines
+        if i == (len(highscores) -1):
+            break
     f = open("high-score.txt", "w") # Open the high-score file
     f.write(scores) # Overwrite highscore data
     f.close()
