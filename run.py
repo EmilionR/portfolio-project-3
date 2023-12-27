@@ -163,6 +163,7 @@ def check_if_correct(answer):
     """
     global current_question
     global score
+    point_or_points = ""
     # Check if the answer matches the answer in the [current_question]
     # index of question_selection list
     if answer == answer_list[question_selection[current_question]]:
@@ -170,7 +171,11 @@ def check_if_correct(answer):
         score += 1
     else:
         print("WRONG!")
-    print(f"You have {score} points!\n")
+    if score == 1:
+        point_or_points = "point"
+    else:
+        point_or_points = "points"
+    print(f"You have {score} {point_or_points}!\n")
     current_question += 1 # Increment question counter to get next question
     input("Press ENTER to continue\n\n")
     if current_question >= len(question_list):
