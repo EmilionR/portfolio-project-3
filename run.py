@@ -130,8 +130,7 @@ def select_questions():
         rand_questions.append(i) # Add the number to 
     random.shuffle(rand_questions) # Shuffle the order of numbers
     rand_questions = rand_questions[:10] # Cut list to first 10 numbers only
-    question_selection.extend(rand_questions) #
-    print(question_selection)
+    question_selection.extend(rand_questions) # Add rand_question indexes to question_selection
 
 def start_round():
     """
