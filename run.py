@@ -216,12 +216,11 @@ def get_high_scores():
     """
     scores = [] # List of names and scores
     with open('high-score.txt') as f: # Read from high-score.txt
-        if f.read(1): # Only do this if the file is not empty
-            for line in f:
-                # Append a pair of name and score to list,
-                # Name is the current line, score is the next line cast to an integer
-                print(line)
-                scores.append([line.strip(), int(next(f).strip())])
+        for line in f:
+        # Append a pair of name and score to list,
+        # Name is the current line, score is the next line cast to an integer
+        print(line)
+        scores.append([line.strip(), int(next(f).strip())])
     return scores
 
 def compare_scores(score, scoreboard):
