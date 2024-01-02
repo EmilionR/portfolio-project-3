@@ -28,6 +28,24 @@ round_length = 15 # Number of questions per round of the game
 current_question = 0
 score = 0
 
+thanks_for_playing = """
+
+                                                                                
+                                                                                
+ .MMMMMMM           MM.          .8M            MMMM.M.                      M  
+ M .M MS,            M           M.             M. M.M.         M           OO  
+ . M7 .M M  +M  N~M..8NN..M7    NMN, M=  DM     M. M M  NM ND N.  MNS  MD   M   
+   M.  M M ,+.I M M M.M.,I..    .M..M.M MDM     M OM.M.M.M N= M M.iM M M M. M.  
+   M   M M. .M. M M MM.  M.      M M  M M       Mi . M  iM .M   M M..M M M  M   
+   M   M M.M M 8' M.MM.  ,M     .M M  M.M      :M   ,8 M M  MM. M M..M M=+  "    
+   M  ,O M.M.M.M. M M.M.M M.    7, M .M.M      M=   M O+.N  M.  M.M.i: ::M  MZ  
+ .MM,.MMMM,M~MIMMMMMM MMNM,.   +MM..MM MM.    MMM. +MN M M  M .MMMM MM. .M  Z:  
+                                                           xM           .+      
+                                                          MM         .MMM       
+                                                                                
+                                                                                                                                                            
+"""
+
 def initialize_game():
     """
     Initialize game state and relevant variables
@@ -209,7 +227,7 @@ def game_over():
     while True:
         choice = input("Y/N\n").upper()
         if choice == "N":
-            print("Thank you for playing.\n")
+            print(thanks_for_playing)
             exit()
         elif choice == "Y":
             restart_game()
