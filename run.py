@@ -17,11 +17,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 # Google Spreadsheet
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('euroquiz-highscores')
-highscores = SHEET.worksheet('highscores')
-
-data = highscores.get_all_values()
-print("Highscore check")
-print(data)
+high_scores = SHEET.worksheet('highscores')
 
 username = ""
 question_list = [] # List of questions
@@ -219,18 +215,14 @@ def game_over():
             restart_game()
             break
 
-def update_high_score(highscores):
+def update_high_score(scoreboard):
     """
     Update high score list
     """
-    scores = "" # Temporary string for converting data
-    for i in range(10): # Iterate through 10 indexes of highscores list
-        scores += f"{highscores[i][0]}\n{str(highscores[i][1])}\n" # Add name and score to separate lines
-        if i == (len(highscores) -1):
+    for i in range(10): # Iterate through 10 indexes of scoreboard list
+        high_scores.append_row(scoreboard[i])
+        if i == (len(scoreboard) -1):
             break
-    f = open("high-score.txt", "w") # Open the high-score file
-    f.write(scores) # Overwrite highscore data
-    f.close()
     
 def get_high_scores():
     """
