@@ -217,13 +217,28 @@ def game_over():
 
 def update_high_score(scoreboard):
     """
-    Update high score list
+    Update high score list in external google sheet
+    Create list of cells to update, loop through scores
+    and add their values to the cells list, then update
+    the document using the list of cells to update
     """
+    cells_to_update = []
+    class Cell: # Holds the coordinates and value for a cell to update
+        def __init__(self, r, c, val):
+            self.row = r
+            self.col = c
+            self.value = val
+
     for i in range(10): # Iterate through 10 indexes of scoreboard list
-        high_scores.append_row(scoreboard[i])
+        # Add each name and score value to its own row
+        # Rows are designated as i+2 because sheet cells start at 1
+        # and because the first row holds headings
+        cells_to_update.append(Cell(i+2, 1, scoreboard[i][0]))
+        cells_to_update.append(Cell(i+2, 2, scoreboard[i][1]))
         if i == (len(scoreboard) -1):
             break
-    
+    high_scores.update_cells(cells_to_update)
+
 def get_high_scores():
     """
     Read high scores from gspread file
