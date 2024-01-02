@@ -46,11 +46,6 @@ thanks_for_playing = """
                                                                                                                                                             
 """
 
-def initialize_game():
-    """
-    Initialize game state and relevant variables
-    """
-
 def create_questions():
     """
     Load questions from file and loop through it,
