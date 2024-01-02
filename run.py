@@ -238,6 +238,7 @@ def update_high_score(scoreboard):
         if i == (len(scoreboard) -1):
             break
     high_scores.update_cells(cells_to_update)
+    show_high_score()
 
 def get_high_scores():
     """
