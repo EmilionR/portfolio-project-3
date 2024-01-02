@@ -77,9 +77,16 @@ Before I began building the project, I made a flowchart to visualize how the pro
 
 ![Concept Flowchart](documentation/flowchart.png)
 
+At one point, when all the functional code was about finished, I discovered that the scoreboard could not function as intended due to the way the deployment works. Since the app could not make persistent overwrites to its text files and thereby save high scores between sessions, I decided to change the code to use an externally hosted spreadsheet.
+
 ## Features
 
 ### Existing Features
+
+The game features a fairly wide selection of questions. Each round randomizes which questions are used.
+This way, each round is unique.
+
+The game saves high scores, and players can view the scoreboard from the main menu. High scores are also on display at the end of each round. At the start of each game, the player gets to write their name. This name is what will go to the scoreboard if they get a good score.
 
 ## User Experience
 
@@ -145,6 +152,9 @@ To Deploy the site using GitHub Pages:
 Please refer to [TESTING.md](TESTING.md) for testing documentation.
 
 ### Solved Bugs
+
+1. The game would sometimes crash when trying to load high scores if there were few or no entries in the list.
+2. Names in the first place of the scoreboard would lose their first letter when loaded into the game.
 
 ### Unfixed Bugs
 
