@@ -226,15 +226,16 @@ def update_high_score(scoreboard):
     
 def get_high_scores():
     """
-    Read high scores from text file
+    Read high scores from gspread file
     """
-    scores = [] # List of names and scores
-    with open('high-score.txt') as f: # Read from high-score.txt
-        for line in f:
-        # Append a pair of name and score to list,
-        # Name is the current line, score is the next line cast to an integer
-            scores.append([line.strip(), int(next(f).strip())])
-    return scores
+    results = []
+    # Extract each name and score value from corresponding columns, skipping the first row
+    names = [value for value in high_scores.col_values(1)[1:] if value]
+    scores = [value for value in high_scores.col_values(2)[1:] if value]
+    # Add each name-score pair to the results list
+    for i in range(len(names)):
+        results.append([names[i], int(scores[i])])
+    return results
 
 def compare_scores(score, scoreboard):
     """
