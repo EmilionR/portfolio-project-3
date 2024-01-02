@@ -28,6 +28,18 @@ round_length = 15 # Number of questions per round of the game
 current_question = 0
 score = 0
 
+game_logo = """
+
+        7D$$$7 M.    M  M:,IM.  +M=,OM.   M8,~MI  =O    77 $7 ?$$$$$M.          
+        77     M.    M  M.  .M 8?    .M .M..   ~D =O    77 $7     ,M            
+        7MMMM. M.    M  M~~7M  M.     II=Z      M =O    77 $7    ZN.            
+        77     M.    M  M.  M. M.     D:,M.     M.=8    ZI $7   M+.             
+        77     I8   +D  M.  .M..M    ID .ZO    M.  M    M  $7 .M.               
+        +$$$$7   ZMO.   $.   Z   .ON7      ?NMM:    :DD+   I?.Z$$$$$$~          
+                                              xXo.                              
+                                                                               
+"""
+
 thanks_for_playing = """
 
                                                                                 
@@ -76,12 +88,8 @@ def intro_message():
     Displays game logo and welcome message
     """
     choice = ""
-    print("\n"
-          "\n"
-          "                                  Europe  Quiz                                  "
-          "\n"
-          "\n"
-          "                         Answer Questions about Europe                          "
+    print(game_logo)
+    print("                         Answer Questions about Europe                          "
           "\n"
           "\n")
           
