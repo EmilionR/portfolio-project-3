@@ -105,9 +105,13 @@ def intro_message():
         elif choice == "2":
             clear_terminal()
             show_high_score()
+            choice = input("Press ENTER to close\n")
+            clear_terminal()
         elif choice == "3":
             clear_terminal()
             how_to_play()
+            choice = input("Press ENTER to close\n")
+            clear_terminal()
         else:
             print("Invalid input.\n")
 
