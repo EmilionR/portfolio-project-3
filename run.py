@@ -231,15 +231,19 @@ def game_over():
     """
     print(f"GAME OVER!\n\nFinal score: {score}\n")
     compare_scores(score, get_high_scores())
-    print("Play Again?\n")
     while True:
-        choice = input("Y/N\n").upper()
+        print("Play Again?\n")
+        choice = input("Y/N\n\n").upper()
         if choice == "N":
+            clear_terminal()
             print(thanks_for_playing)
             exit()
         elif choice == "Y":
+            clear_terminal()
             restart_game()
             break
+        else:
+            print("ERROR: Invalid input.\n")
 
 def update_high_score(scoreboard):
     """
