@@ -105,13 +105,11 @@ def intro_message():
         elif choice == "2":
             clear_terminal()
             show_high_score()
-            choice = input("Press ENTER to close\n")
-            clear_terminal()
+            enter_to_continue()
         elif choice == "3":
             clear_terminal()
             how_to_play()
-            choice = input("Press ENTER to close\n")
-            clear_terminal()
+            enter_to_continue()
         else:
             print("Invalid input.\n")
 
@@ -223,7 +221,7 @@ def check_if_correct(answer):
         point_or_points = "points"
     print(f"You have {score} {point_or_points}!\n")
     current_question += 1 # Increment question counter to get next question
-    input("Press ENTER to continue\n\n")
+    enter_to_continue()
     if current_question >= round_length: # Check if this is the last question
         game_over()
 
@@ -308,6 +306,10 @@ def clear_terminal():
     and improve aesthetics/formatting
     """
     print("\033c")
+
+def enter_to_continue():
+    input("Press ENTER to continue\n\n")
+    clear_terminal()
 
 def main():
     create_questions()
