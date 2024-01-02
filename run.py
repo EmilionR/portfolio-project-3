@@ -1,5 +1,27 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import gspread
+from google.oauth2.service_account import Credentials
 import random
+
+# Scope of APIs to run
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+# Credentials file
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+
+# Google Spreadsheet
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('euroquiz-highscores')
+highscores = SHEET.worksheet('highscores')
+
+data = highscores.get_all_values()
+print("Highscore check")
+print(data)
 
 username = ""
 question_list = [] # List of questions
