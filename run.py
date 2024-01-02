@@ -99,14 +99,17 @@ def intro_message():
         "3. How to Play\n")
         choice = input("Please select(1, 2, or 3)\n")
         if choice == "1":
+            clear_terminal()
             start_round()
             break
         elif choice == "2":
+            clear_terminal()
             show_high_score()
         elif choice == "3":
+            clear_terminal()
             how_to_play()
         else:
-            print("Invalid option.")
+            print("Invalid input.\n")
 
 def how_to_play():
     print("\n"
@@ -294,6 +297,13 @@ def restart_game():
     current_question = 0 # Reset question counter
     score = 0 # Reset score counter
     start_round() # Start a new round of the game
+
+def clear_terminal():
+    """
+    Clear all text from the terminal to reduce clutter
+    and improve aesthetics/formatting
+    """
+    print("\033c")
 
 def main():
     create_questions()
