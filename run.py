@@ -237,6 +237,8 @@ def check_if_correct(answer):
     if current_question >= round_length: # Check if this is the last question
         game_over()
 
+
+
 def game_over():
     """
     Calculate final score and check if hi-score is achieved
@@ -260,6 +262,10 @@ def game_over():
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
 
 def game_over_message():
+    """
+    Present final score and gameover message
+    Messages differ depending on score
+    """
     time.sleep(0.5)
     print(f"{Fore.YELLOW}GAME OVER!\n\n")
     time.sleep(0.5)
