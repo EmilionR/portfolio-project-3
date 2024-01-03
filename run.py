@@ -3,6 +3,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 # Import randomness generator to randomize questions
 import random
+# Import time for waiting
+import time
 # Colorama import for styling text
 from colorama import init as colorama_init
 from colorama import Fore, Style
@@ -131,8 +133,10 @@ def request_name():
     Request player name input
     """
     global username
+    time.sleep(0.75)
     print("Welcome to the Europe Quiz!")
     while(True): #Keep requesting name until a valid name is given
+        time.sleep(0.75)
         username = input(f"What's your name?\n\n{Fore.MAGENTA}")
         print(f"{Style.RESET_ALL}")
         if username == "" or username.isspace(): #Check if name is left blank
@@ -144,7 +148,12 @@ def request_name():
         elif not username.isalnum(): #Check if username contains invalid symbols
             print("\nHmm, names should not include non-alphanumeric symbols.")
         else: #Accept username and continue
-            print(f"\nWelcome, {username}!\nLet's get started.\n")
+            time.sleep(0.75)
+            print(f"\nWelcome, {username}!")
+            time.sleep(0.75)
+            print("\nLet's get started.\n")
+            time.sleep(1.5)
+            clear_terminal()
             break
 
 def show_high_score():
@@ -192,8 +201,10 @@ def ask_question():
     while True:
         # Select question using a random number from question_selection,
         # getting the index corresponding to the current question number
-        print(f"Question number {current_question+1}")
+        print(f"{Fore.YELLOW}Question number {current_question+1}\n{Style.RESET_ALL}")
+        time.sleep(0.5)
         print(f"{question_list[question_selection[current_question]]}")
+        time.sleep(1)
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
@@ -229,10 +240,15 @@ def game_over():
     """
     Calculate final score and check if hi-score is achieved
     """
-    print(f"GAME OVER!\n\nFinal score: {score}\n")
+    time.sleep(0.5)
+    print(f"GAME OVER!\n\n")
+    time.sleep(0.5)
+    print(f"Final score: {score}\n\n")
     compare_scores(score, get_high_scores())
     while True:
+        time.sleep(0.5)
         print("Play Again?\n")
+        time.sleep(0.5)
         choice = input(f"{Fore.CYAN}Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N":
             clear_terminal()
@@ -312,6 +328,7 @@ def clear_terminal():
     print("\033c")
 
 def enter_to_continue():
+    time.sleep(0.5)
     input(f"{Fore.CYAN}Press ENTER to continue\n\n{Fore.MAGENTA}")
     clear_terminal()
 
