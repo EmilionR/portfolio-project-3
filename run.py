@@ -94,7 +94,7 @@ def intro_message():
         print("1. Start Game\n"
         "2. High Scores\n"
         "3. How to Play\n")
-        choice = input(f"Please select(1, 2, or 3)\n{Fore.MAGENTA}")
+        choice = input(f"{Fore.CYAN}Please select(1, 2, or 3)\n{Fore.MAGENTA}")
         if choice == "1":
             clear_terminal()
             start_round()
@@ -194,7 +194,7 @@ def ask_question():
         # getting the index corresponding to the current question number
         print(f"Question number {current_question+1}")
         print(f"{question_list[question_selection[current_question]]}")
-        answer = input(f"Your answer:\n{Fore.MAGENTA}").upper()
+        answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
         else:
@@ -233,7 +233,7 @@ def game_over():
     compare_scores(score, get_high_scores())
     while True:
         print("Play Again?\n")
-        choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
+        choice = input(f"{Fore.CYAN}Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N":
             clear_terminal()
             print(thanks_for_playing)
@@ -312,7 +312,7 @@ def clear_terminal():
     print("\033c")
 
 def enter_to_continue():
-    input("Press ENTER to continue\n\n")
+    input(f"{Fore.CYAN}Press ENTER to continue\n\n{Fore.MAGENTA}")
     clear_terminal()
 
 def main():
