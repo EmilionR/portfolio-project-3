@@ -96,13 +96,13 @@ def intro_message():
     print(game_logo)
     print("                         Answer Questions about Europe                          "
           "\n"
-          "\n")
+          "\n{Style.RESET_ALL}")
           
     while True: # Loop until valid input is given
         print("1. Start Game\n"
         "2. High Scores\n"
         "3. How to Play\n")
-        choice = input("Please select(1, 2, or 3)\n")
+        choice = input(f"Please select(1, 2, or 3)\n{Fore.MAGENTA}")
         if choice == "1":
             clear_terminal()
             start_round()
@@ -138,7 +138,8 @@ def request_name():
     global username
     print("Welcome to the Europe Quiz!")
     while(True): #Keep requesting name until a valid name is given
-        username = input("What's your name?\n\n")
+        username = input(f"What's your name?\n\n{Fore.MAGENTA}")
+        print(f"{Style.RESET_ALL}")
         if username == "" or username.isspace(): #Check if name is left blank
             print("\nSilence, huh... Surely, you must have a name.")
         elif username.isnumeric(): #Check if username only contains numbers
@@ -198,7 +199,7 @@ def ask_question():
         # getting the index corresponding to the current question number
         print(f"Question number {current_question+1}")
         print(f"{question_list[question_selection[current_question]]}")
-        answer = input("Your answer:\n").upper()
+        answer = input(f"Your answer:\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
         else:
@@ -237,7 +238,7 @@ def game_over():
     compare_scores(score, get_high_scores())
     while True:
         print("Play Again?\n")
-        choice = input("Y/N\n\n").upper()
+        choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N":
             clear_terminal()
             print(thanks_for_playing)
