@@ -33,35 +33,27 @@ round_length = 15 # Number of questions per round of the game
 current_question = 0
 score = 0
 
-game_logo = """
+# Load ASCII art
+ascii = open("assets/ascii.txt")
 
-        7D$$$7 M.    M  M:,IM.  +M=,OM.   M8,~MI  =O    77 $7 ?$$$$$M.          
-        77     M.    M  M.  .M 8?    .M .M..   ~D =O    77 $7     ,M            
-        7MMMM. M.    M  M~~7M  M.     II=Z      M =O    77 $7    ZN.            
-        77     M.    M  M.  M. M.     D:,M.     M.=8    ZI $7   M+.             
-        77     I8   +D  M.  .M..M    ID .ZO    M.  M    M  $7 .M.               
-        +$$$$7   ZMO.   $.   Z   .ON7      ?NMM:    :DD+   I?.Z$$$$$$~          
-                                              xXo.                              
-                                                                               
-"""
-
-thanks_for_playing = """
-
-                                                                                
-                                                                                
- .MMMMMMM           MM.          .8M            MMMM.M.                      M  
- M .M MS,            M           M.             M. M.M.         M           OO  
- . M7 .M M  +M  N~M..8NN..M7    NMN, M=  DM     M. M M  NM ND N.  MNS  MD   M   
-   M.  M M ,+.I M M M.M.,I..    .M..M.M MDM     M OM.M.M.M N= M M.iM M M M. M.  
-   M   M M. .M. M M MM.  M.      M M  M M       Mi . M  iM .M   M M..M M M  M   
-   M   M M.M M 8' M.MM.  ,M     .M M  M.M      :M   ,8 M M  MM. M M..M M=+  "    
-   M  ,O M.M.M.M. M M.M.M M.    7, M .M.M      M=   M O+.N  M.  M.M.i: ::M  MZ  
- .MM,.MMMM,M~MIMMMMMM MMNM,.   +MM..MM MM.    MMM. +MN M M  M .MMMM MM. .M  Z:  
-                                                           xM           .+      
-                                                          MM         .MMM       
-                                                                                
-                                                                                                                                                            
-"""
+def load_ascii(begin, stop):
+    """
+    Read ascii art file line by line, setting colors to selected lines
+    Takes arguments for which line to start and stop at
+    """
+    height = stop - begin # Calculate the height of the art
+    lines_counted = 0
+    logo = ""
+    for i in range(begin,stop):
+        if lines_counted <= height / 2.5 or lines_counted >= 0.6 * height:
+            logo += f"{Fore.BLUE}{str(ascii.readline())}"
+        else:
+            logo += f"{Fore.YELLOW}{str(ascii.readline())}"
+        lines_counted += 1
+    return logo
+    
+game_logo = load_ascii(1,11)
+thanks_for_playing = load_ascii(13,34)
 
 def create_questions():
     """
@@ -94,9 +86,9 @@ def intro_message():
     """
     choice = ""
     print(game_logo)
-    print("                         Answer Questions about Europe                          "
+    print(f"{Fore.YELLOW}                         Answer Questions about Europe                          "
           "\n"
-          "\n{Style.RESET_ALL}")
+          f"\n{Style.RESET_ALL}")
           
     while True: # Loop until valid input is given
         print("1. Start Game\n"
@@ -121,9 +113,8 @@ def intro_message():
 def how_to_play():
     print("\n"
           "\n"
-          "                                  How to Play                                   "
-          "\n"
-          "\n"
+          "          How to play            "
+          
           "\n"
           "Each question comes with four potential answers : A, B, C, and D.\n"
           "Choose one by typing in the corresponding letter.\n"
