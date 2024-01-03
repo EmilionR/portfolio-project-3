@@ -36,8 +36,6 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 * [Features](#Features)
   * [Existing Features](#existing-features)
-    * [Home page](#home-page)
-    * [Game page](#game-page)
   * [Future Implementations](#future-implementations)
 
 * [User Experience](#User-Experience)
@@ -77,16 +75,26 @@ Before I began building the project, I made a flowchart to visualize how the pro
 
 ![Concept Flowchart](documentation/flowchart.png)
 
-At one point, when all the functional code was about finished, I discovered that the scoreboard could not function as intended due to the way the deployment works. Since the app could not make persistent overwrites to its text files and thereby save high scores between sessions, I decided to change the code to use an externally hosted spreadsheet.
+From there, I built the core flow of the game function by function until the game could be played properly and repeatedly. Most of this revolves around taking user input and validating it to make sure that the input is correct and cannot cause any problems with the code. Also, I made the program convert all answer inputs to uppercase so that the game can accept it with a single line of code regardless of case.
+
+The other aspect of the building process was getting the computer to read questions from a separate file and organizing questions and correct answers in a neat and reliable manner. As soon as the game itself was working, I started implementing the high score functionality using the same principles of reading and writing to a text file.
+
+At one point, when all the functional code was about finished, I discovered that the scoreboard could not function as intended due to the way the deployment to Heroku works. Since the app could not make persistent overwrites to its text files and thereby save high scores between sessions, I decided to change the code to use an externally hosted spreadsheet.
+
+This was achieved by using gspread through a Google Cloud API setup. The program now reads and writes to dedicated cells in a worksheet hosted on Google docs, within a limited scope that will never overflow.
 
 ## Features
 
 ### Existing Features
 
 The game features a fairly wide selection of questions. Each round randomizes which questions are used.
-This way, each round is unique.
+This way, each round is unique and players can't cheat the game by simply restarting and memorizing a letter sequence.
 
 The game saves high scores, and players can view the scoreboard from the main menu. High scores are also on display at the end of each round. At the start of each game, the player gets to write their name. This name is what will go to the scoreboard if they get a good score.
+
+### Future Implementations
+
+If I continue developing this game, I will add more questions. I would also have the game keep track of each time someone gets the right or wrong answer, and then use this data to calculate the perceived difficulty of each question. This would then be used to equalize the overall difficulty of each round, making the game both more interesting and more fair. This could also allow for harder questions to give an extra point.
 
 ## User Experience
 
