@@ -75,7 +75,7 @@ def create_questions():
     global answer_list #List of correct answers
     global question_length
     question_lines = "" # Temporary container for question+answers broken into lines
-    questions_file = open("questions.txt", "r") # Load questions from text file
+    questions_file = open("assets/questions.txt", "r") # Load questions from text file
     lines_counted = 0 # Counter used for breaking file into even chunks
     for line in questions_file:
         if lines_counted == 0: # Check for first line of chunk, containing the answer
