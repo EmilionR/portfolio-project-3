@@ -97,7 +97,7 @@ def intro_message():
         print("1. Start Game\n"
         "2. High Scores\n"
         "3. How to Play\n")
-        choice = input(f"{Fore.CYAN}Please select(1, 2, or 3)\n{Fore.MAGENTA}")
+        choice = input(f"{Fore.CYAN}Please select(1, 2, or 3)\n\n{Fore.MAGENTA}")
         if choice == "1":
             clear_terminal()
             start_round()
@@ -241,10 +241,7 @@ def game_over():
     """
     Calculate final score and check if hi-score is achieved
     """
-    time.sleep(0.5)
-    print(f"{Fore.YELLOW}GAME OVER!\n\n")
-    time.sleep(0.5)
-    print(f"Final score: {score}\n\n{Style.RESET_ALL}")
+    game_over_message()
     compare_scores(score, get_high_scores())
     while True: # Ask about restarting until given valid input
         time.sleep(0.5)
@@ -261,6 +258,32 @@ def game_over():
             break
         else:
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
+
+def game_over_message():
+    time.sleep(0.5)
+    print(f"{Fore.YELLOW}GAME OVER!\n\n")
+    time.sleep(0.5)
+    print(f"Final score: {score}\n\n{Style.RESET_ALL}")
+    time.sleep(0.75)
+    if score > 15:
+        print("This score is not possible without cheating...\n\n")
+    elif score == 15:
+        print("WOOHOO! Full score!")
+        time.sleep(0.3)
+        print("That's incredible!\n\n")
+    elif score > 10:
+        print("You did really well.\n\n")
+    elif score > 7:
+        print("Not too shabby.\n\n")
+    elif score > 0:
+        print("...")
+        time.sleep(0.2)
+        print("Better luck next time.\n\n")
+    else:
+        print(f"I see...")
+        time.sleep(0.3)
+        print("You're American, aren't you?\n\n")
+    time.sleep(0.75)
 
 def update_high_score(scoreboard):
     """
