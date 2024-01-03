@@ -241,15 +241,15 @@ def game_over():
     Calculate final score and check if hi-score is achieved
     """
     time.sleep(0.5)
-    print(f"GAME OVER!\n\n")
+    print(f"{Fore.YELLOW}GAME OVER!\n\n")
     time.sleep(0.5)
-    print(f"Final score: {score}\n\n")
+    print(f"Final score: {score}\n\n{Style.RESET_ALL}")
     compare_scores(score, get_high_scores())
     while True:
         time.sleep(0.5)
-        print("Play Again?\n")
+        print(f"{Fore.CYAN}Play Again?\n")
         time.sleep(0.5)
-        choice = input(f"{Fore.CYAN}Y/N\n\n{Fore.MAGENTA}").upper()
+        choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N":
             clear_terminal()
             print(thanks_for_playing)
