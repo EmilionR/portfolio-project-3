@@ -1,11 +1,10 @@
 # EuroQuiz - TESTING
 
-![Image of the site on devices]()
+![Project-image]()
 
 Visit live deployed site: [EuroQuiz]()
 
-* [Automated Testing](#automated-testing)
-  * [Validator Testing](#validator-testing)
+* [Validation](#validator-testing)
 * [Manual Testing](#manual-testing)
   * [Testing User Stories](#testing-user-stories)
   * [Full Testing](#full-testing)
