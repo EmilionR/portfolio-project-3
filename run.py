@@ -53,7 +53,8 @@ def load_ascii(begin, stop):
             logo += f"{Fore.YELLOW}{str(ascii.readline())}"
         lines_counted += 1
     return logo
-    
+
+# Load ASCII text logos    
 game_logo = load_ascii(1,11)
 thanks_for_playing = load_ascii(13,34)
 
@@ -245,16 +246,16 @@ def game_over():
     time.sleep(0.5)
     print(f"Final score: {score}\n\n{Style.RESET_ALL}")
     compare_scores(score, get_high_scores())
-    while True:
+    while True: # Ask about restarting until given valid input
         time.sleep(0.5)
         print(f"{Fore.CYAN}Play Again?\n")
         time.sleep(0.5)
         choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
-        if choice == "N":
+        if choice == "N": # Display thank you message and stop the program
             clear_terminal()
             print(thanks_for_playing)
             exit()
-        elif choice == "Y":
+        elif choice == "Y": # Start another round of the game
             clear_terminal()
             restart_game()
             break
@@ -325,9 +326,13 @@ def clear_terminal():
     Clear all text from the terminal to reduce clutter
     and improve aesthetics/formatting
     """
-    print("\033c")
+    print("\033c") # Print an escape character to clear terminal
 
 def enter_to_continue():
+    """
+    Ask user to press enter
+    Any input works
+    """
     time.sleep(0.5)
     input(f"{Fore.CYAN}Press ENTER to continue\n\n{Fore.MAGENTA}")
     clear_terminal()
