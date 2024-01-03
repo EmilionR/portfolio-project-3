@@ -113,9 +113,13 @@ def intro_message():
 def how_to_play():
     print("\n"
           "\n"
-          "          How to play            "
-          
+          f"{Fore.BLUE}          #  # .###. #     #   ##### .###.   ###.  #    .###. #. .#            \n"
+          f"{Fore.YELLOW}          #  # #' `# #  .  #     #   #   #   #  #  #    #   # '#.#'            \n"
+          "          #### #   # #. # .#     #   #   #   ###   #    #####  '#'            \n"
+          f"{Fore.BLUE}          #  # #. .# '## ##'     #   #   #   #'    #    #   #   #              \n"
+          "          #  # `###`  #   #      #   `###`   #     #### #   #   #              \n"
           "\n"
+          f"\n{Style.RESET_ALL}"
           "Each question comes with four potential answers : A, B, C, and D.\n"
           "Choose one by typing in the corresponding letter.\n"
           "Each correct answer gives you one point.\n"
