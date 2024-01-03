@@ -5,8 +5,7 @@ from google.oauth2.service_account import Credentials
 import random
 # Colorama import for styling text
 from colorama import init as colorama_init
-from colorama import Fore
-from colorama import Style
+from colorama import Fore, Style
 colorama_init()
 
 # Scope of APIs to run
@@ -117,7 +116,7 @@ def intro_message():
             how_to_play()
             enter_to_continue()
         else:
-            print("Invalid input.\n")
+            print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
 
 def how_to_play():
     print("\n"
@@ -201,7 +200,7 @@ def ask_question():
         print(f"{question_list[question_selection[current_question]]}")
         answer = input("Your answer:\n").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
-            print("Invalid input.\n")
+            print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
         else:
             check_if_correct(answer)
 
@@ -216,10 +215,10 @@ def check_if_correct(answer):
     # Check if the answer matches the answer in the [current_question]
     # index of question_selection list
     if answer == answer_list[question_selection[current_question]]:
-        print(f"CORRECT!")
+        print(f"{Fore.GREEN}CORRECT!{Style.RESET_ALL}")
         score += 1
     else:
-        print("WRONG!")
+        print(f"{Fore.RED}WRONG!{Style.RESET_ALL}")
     if score == 1:
         point_or_points = "point"
     else:
@@ -248,7 +247,7 @@ def game_over():
             restart_game()
             break
         else:
-            print("\nERROR: Invalid input.\n")
+            print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
 
 def update_high_score(scoreboard):
     """
