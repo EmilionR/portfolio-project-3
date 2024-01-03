@@ -223,20 +223,52 @@ def check_if_correct(answer):
     # Check if the answer matches the answer in the [current_question]
     # index of question_selection list
     if answer == answer_list[question_selection[current_question]]:
-        print(f"{Fore.GREEN}CORRECT!{Style.RESET_ALL}")
+        chatter("right")
         score += 1
     else:
-        print(f"{Fore.RED}WRONG!{Style.RESET_ALL}")
+        chatter("wrong")
     if score == 1:
         point_or_points = "point"
     else:
         point_or_points = "points"
-    print(f"You have {score} {point_or_points}!\n")
+    print(f"\nYou have {score} {point_or_points}!\n")
     current_question += 1 # Increment question counter to get next question
     enter_to_continue()
     if current_question >= round_length: # Check if this is the last question
         game_over()
 
+def chatter(right_or_wrong):
+    """
+    Provide different feedback about the answer
+    """
+    outcome = ""
+    right = ["RIGHT", "CORRECT"]
+    wrong = ["WRONG", "INCORRECT"]
+    rand1 = random.randint(0, 3) # Randomizer for different responses
+    rand2 = random.randint(0, 1) # Randomizer for rigt/wrong vs correct/incorrect
+
+    if right_or_wrong == "right":
+        outcome = f"{Fore.GREEN}{right[rand2]}{Style.RESET_ALL}"
+    else:
+        outcome = f"{Fore.RED}{wrong[rand2]}{Style.RESET_ALL}"
+    print(f"{Style.RESET_ALL}")
+    # Reply with one of these remarks
+    if rand1 == 0:
+        print("That is...")
+        time.sleep(0.5)
+        print(f"{outcome}!")
+    elif rand1 == 1:
+        print(f"{username}...")
+        time.sleep(0.5)
+        print(f"That's {outcome}!")
+    elif rand1 == 2:
+        print(f"Ooooo...")
+        time.sleep(0.2)
+        print(f"{outcome} answer!")
+    elif rand1 == 3:
+        print(f"{outcome}!")
+    else:
+        print(f"Yeah, that's {outcome}")
 
 
 def game_over():
