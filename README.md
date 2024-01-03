@@ -171,18 +171,6 @@ The Application has been deployed from GitHub to Heroku following the steps:
 
 Please refer to [TESTING.md](TESTING.md) for testing documentation.
 
-### Solved Bugs
-
-1. The game would sometimes crash when trying to load high scores if there were few or no entries in the list.
-2. Names in the first place of the scoreboard would lose their first letter when loaded into the game.
-
-### Unfixed Bugs
-
-
 ## Credits
-
-### Content
-
-### Media
 
 ### Tutorials & Code Used
