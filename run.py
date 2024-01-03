@@ -1,7 +1,13 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Import google spread and authorization for Cloud API
 import gspread
 from google.oauth2.service_account import Credentials
+# Import randomness generator to randomize questions
 import random
+# Colorama import for styling text
+from colorama import init as colorama_init
+from colorama import Fore
+from colorama import Style
+colorama_init()
 
 # Scope of APIs to run
 SCOPE = [
@@ -210,7 +216,7 @@ def check_if_correct(answer):
     # Check if the answer matches the answer in the [current_question]
     # index of question_selection list
     if answer == answer_list[question_selection[current_question]]:
-        print("CORRECT!")
+        print(f"CORRECT!")
         score += 1
     else:
         print("WRONG!")
