@@ -188,7 +188,6 @@ def ask_question():
     """
     Present the next question and the alternatives for answers
     """
-    print("Next question!\n")
     while True:
         # Select question using a random number from question_selection,
         # getting the index corresponding to the current question number
@@ -243,7 +242,7 @@ def game_over():
             restart_game()
             break
         else:
-            print("ERROR: Invalid input.\n")
+            print("\nERROR: Invalid input.\n")
 
 def update_high_score(scoreboard):
     """
