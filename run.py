@@ -287,7 +287,7 @@ def game_over():
     compare_scores(score, get_high_scores())
     while True: # Ask about restarting until given valid input
         time.sleep(0.5)
-        print(f"{Fore.CYAN}Play Again?\n".center(80))
+        print("\n", f"{Fore.CYAN}Play Again?".center(80, "="), "\n")
         time.sleep(0.5)
         choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N": # Display thank you message and stop the program
