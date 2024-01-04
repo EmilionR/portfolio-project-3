@@ -97,12 +97,13 @@ def intro_message():
     Displays game logo and welcome message
     """
     choice = ""
-    
+
     while True:  # Loop until valid input is given
         print(game_logo)
-        print(f"{Fore.YELLOW}", "Answer Questions about Europe".center(80, '-'),
-            "\n"
-            f"\n{Style.RESET_ALL}")
+        print(f"{Fore.YELLOW}",
+              "Answer Questions about Europe".center(80, '-'),
+              "\n",
+              f"\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
         choice = input(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
@@ -177,12 +178,12 @@ def show_high_score():
         for i in range(10 - len(scores)):
             scores.append(["----", "----"])  # Add blank entries to list
     scores.insert(0, ["Name", "Score"])
-    score_board = Texttable()  # Make a text table
+    score_tab = Texttable()  # Make a text table
     # Set style of the table to remove dividing lines
-    score_board.set_deco(Texttable.BORDER | Texttable.HEADER | Texttable.VLINES)
-    score_board.add_rows(scores)  # Write name and score to rows of text table
-    score_board.set_cols_align(["c", "c"])  # Center text within table cells
-    output = score_board.draw()  # Turn the table into a string
+    score_tab.set_deco(Texttable.BORDER | Texttable.HEADER | Texttable.VLINES)
+    score_tab.add_rows(scores)  # Write name and score to rows of text table
+    score_tab.set_cols_align(["c", "c"])  # Center text within table cells
+    output = score_tab.draw()  # Turn the table into a string
     line_by_line(output, 0.03, "center")
 
 
