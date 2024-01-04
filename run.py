@@ -139,24 +139,25 @@ def request_name():
     """
     global username
     time.sleep(0.75)
-    print("Welcome to the Europe Quiz!")
+    print("        Welcome to the Europe Quiz!\n")
     while(True): #Keep requesting name until a valid name is given
         time.sleep(0.75)
-        username = input(f"What's your name?\n\n{Fore.MAGENTA}")
+        username = input(f"        What's your name?\n\n{Fore.MAGENTA}")
         print(f"{Style.RESET_ALL}")
         if username == "" or username.isspace(): #Check if name is left blank
-            print("\nSilence, huh... Surely, you must have a name.")
+            print("\n        Silence, huh... Surely, you must have a name.")
         elif username.isnumeric(): #Check if username only contains numbers
-            print(f"{username}... Please enter a name, not your number.")
+            print(f"{username}        ... Please enter a name, not your number.")
         elif len(username) > 16: #Check if username is too long
-            print("\nI'm sorry, that's quite long and hard to pronounce.\nPlease give me the short version.")
+            line_by_line("""I'm sorry, that's quite long and hard to pronounce. Please give me the short version.
+                         """, (0.3))
         elif not username.isalnum(): #Check if username contains invalid symbols
-            print("\nHmm, names should not include non-alphanumeric symbols.")
+            print("\n        Hmm, names should not include non-alphanumeric symbols.")
         else: #Accept username and continue
             time.sleep(0.75)
-            print(f"\nWelcome, {username}!")
+            print(f"\n        Welcome, {username}!")
             time.sleep(0.75)
-            print("\nLet's get started.\n")
+            print("\n        Let's get started.\n")
             time.sleep(1.5)
             clear_terminal()
             break
@@ -207,9 +208,9 @@ def ask_question():
         # Select question using a random number from question_selection,
         # getting the index corresponding to the current question number
         print(f"{Fore.YELLOW}Question number {current_question+1}\n{Style.RESET_ALL}")
-        time.sleep(0.5)
-        line_by_line(f"{question_list[question_selection[current_question]]}", 0.3)
-        time.sleep(1)
+        time.sleep(0.2)
+        line_by_line(f"{question_list[question_selection[current_question]]}", 0.2)
+        time.sleep(0.2)
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
