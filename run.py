@@ -154,11 +154,11 @@ def request_name():
         elif not username.isalnum(): #Check if username contains invalid symbols
             print("        Hmm, names should not include non-alphanumeric symbols.")
         else: #Accept username and continue
-            time.sleep(0.75)
+            time.sleep(0.5)
             print(f"\n        Welcome, {username}!")
-            time.sleep(0.75)
+            time.sleep(0.5)
             print("\n        Let's get started.\n")
-            time.sleep(1.5)
+            time.sleep(1)
             clear_terminal()
             break
 
