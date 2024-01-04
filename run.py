@@ -9,7 +9,7 @@ import time
 from colorama import init as colorama_init
 from colorama import Fore, Style
 colorama_init()
-# Tabulate for highscore table
+# Texttable for highscore table
 from texttable import Texttable
 
 # Scope of APIs to run
@@ -277,7 +277,6 @@ def chatter(right_or_wrong):
         print(f"        {outcome}!")
     else:
         print(f"        Yeah, that's {outcome}")
-
 
 def game_over():
     """
