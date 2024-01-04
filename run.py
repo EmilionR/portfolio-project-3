@@ -9,6 +9,8 @@ import time
 from colorama import init as colorama_init
 from colorama import Fore, Style
 colorama_init()
+# Tabulate for highscore table
+from texttable import Texttable
 
 # Scope of APIs to run
 SCOPE = [
@@ -165,15 +167,23 @@ def request_name():
 def show_high_score():
     """
     Show list of high scores
+    Scores are read from a worksheet in a separate function
+    This function then creates a table and prints it out
     """
     scores = get_high_scores()
-    print("--HIGH SCORES--")
-    for i in range(10): # Count to 10
-        entry = "----" # Placeholder for empty entries
-        if i < len(scores): # Check if i is within list bounds
-            entry = f"{scores[i][0]}: {scores[i][1]}" # Write name and score if index is found
-        print(f"{i+1}) {entry}")  # Printing i+1 to compensate for 0 index
-    print("\n")
+    print(f"{Fore.YELLOW}", "--HIGH SCORES--".center(80), f"{Style.RESET_ALL}")
+    if len(scores) < 10: # If score list is not full
+        for i in range(10 - len(scores)):
+            scores.append(["----", "----"]) # Add blank entries to list
+    scores.insert(0, ["Name", "Score"])
+    score_board = Texttable() # Make a text table
+    # Set style of the table to remove dividing lines
+    score_board.set_deco(Texttable.BORDER | Texttable.HEADER | Texttable.VLINES)
+    score_board.add_rows(scores) # Write name and score to rows of text table
+    score_board.set_cols_align(["c", "c"]) # Center text within table cells
+    output = score_board.draw() # Turn the table into a string
+    for line in output.splitlines(): # Divide table into lines for centering purposes
+        print(line.center(80)) # Center and print each line from the table
 
 def select_questions():
     """
