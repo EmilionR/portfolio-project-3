@@ -145,14 +145,14 @@ def request_name():
         username = input(f"        What's your name?\n\n{Fore.MAGENTA}")
         print(f"{Style.RESET_ALL}")
         if username == "" or username.isspace(): #Check if name is left blank
-            print("\n        Silence, huh... Surely, you must have a name.")
-        elif username.isnumeric(): #Check if username only contains numbers
-            print(f"{username}        ... Please enter a name, not your number.")
+            print("        Silence, huh... Surely, you must have a name.")
         elif len(username) > 16: #Check if username is too long
             line_by_line("""I'm sorry, that's quite long and hard to pronounce. Please give me the short version.
                          """, (0.3))
+        elif username.isnumeric(): #Check if username only contains numbers
+            print(f"        {username}... Please enter a name, not your number.")
         elif not username.isalnum(): #Check if username contains invalid symbols
-            print("\n        Hmm, names should not include non-alphanumeric symbols.")
+            print("        Hmm, names should not include non-alphanumeric symbols.")
         else: #Accept username and continue
             time.sleep(0.75)
             print(f"\n        Welcome, {username}!")
@@ -209,7 +209,7 @@ def ask_question():
         # getting the index corresponding to the current question number
         print(f"{Fore.YELLOW}Question number {current_question+1}\n{Style.RESET_ALL}")
         time.sleep(0.2)
-        line_by_line(f"{question_list[question_selection[current_question]]}", 0.2)
+        line_by_line(f"{question_list[question_selection[current_question]]}", 0.12)
         time.sleep(0.2)
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
@@ -236,7 +236,9 @@ def check_if_correct(answer):
         point_or_points = "point"
     else:
         point_or_points = "points"
-    print(f"\nYou have {score} {point_or_points}!\n")
+    time.sleep(0.2)
+    print(f"{Fore.YELLOW}")
+    print(f"You have _{score}_ {point_or_points}!".center(80, '.'), "\n")
     current_question += 1 # Increment question counter to get next question
     enter_to_continue()
     if current_question >= round_length: # Check if this is the last question
@@ -284,7 +286,7 @@ def game_over():
     compare_scores(score, get_high_scores())
     while True: # Ask about restarting until given valid input
         time.sleep(0.5)
-        print(f"{Fore.CYAN}Play Again?\n")
+        print(f"{Fore.CYAN}Play Again?\n".center(80))
         time.sleep(0.5)
         choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N": # Display thank you message and stop the program
@@ -303,8 +305,9 @@ def game_over_message():
     Present final score and gameover message
     Messages differ depending on score
     """
+    print(f"{Fore.YELLOW}")
     time.sleep(0.5)
-    print(f"{Fore.YELLOW}GAME OVER!".center(80))
+    print(f"GAME OVER!".center(80, "~"))
     time.sleep(0.5)
     print(f"Final score: {score}\n\n{Style.RESET_ALL}".center(80))
     time.sleep(0.75)
