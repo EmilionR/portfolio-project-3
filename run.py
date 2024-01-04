@@ -59,6 +59,7 @@ def load_ascii(begin, stop):
 # Load ASCII text logos    
 game_logo = load_ascii(1,11)
 thanks_for_playing = load_ascii(13,34)
+how_play = load_ascii(30,42)
 
 def create_questions():
     """
@@ -117,15 +118,7 @@ def intro_message():
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
 
 def how_to_play():
-    print("\n"
-          "\n"
-          f"{Fore.BLUE}          #  # .###. #     #   ##### .###.   ###.  #    .###. #. .#            \n"
-          f"{Fore.YELLOW}          #  # #' `# #  .  #     #   #   #   #  #  #    #   # '#.#'            \n"
-          "          #### #   # #. # .#     #   #   #   ###   #    #####  '#'            \n"
-          f"{Fore.BLUE}          #  # #. .# '## ##'     #   #   #   #'    #    #   #   #              \n"
-          "          #  # `###`  #   #      #   `###`   #     #### #   #   #              \n"
-          "\n"
-          f"\n{Style.RESET_ALL}")
+    line_by_line(how_play, 0.03)
     instructions = ["    Each question comes with four potential answers : A, B, C, and D.",
           "    Choose one by typing in the corresponding letter.",
           "    Each correct answer gives you one point.",
@@ -133,7 +126,6 @@ def how_to_play():
     for i in range(len(instructions)):
         time.sleep(0.1)
         print(instructions[i])
-          
 
 def request_name():
     """
@@ -301,7 +293,7 @@ def game_over():
         choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N": # Display thank you message and stop the program
             clear_terminal()
-            print(thanks_for_playing)
+            line_by_line(thanks_for_playing, 0.02)
             exit()
         elif choice == "Y": # Start another round of the game
             clear_terminal()
