@@ -208,7 +208,7 @@ def ask_question():
         # getting the index corresponding to the current question number
         print(f"{Fore.YELLOW}Question number {current_question+1}\n{Style.RESET_ALL}")
         time.sleep(0.5)
-        print(f"{question_list[question_selection[current_question]]}")
+        line_by_line(f"{question_list[question_selection[current_question]]}", 0.3)
         time.sleep(1)
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
@@ -402,6 +402,15 @@ def enter_to_continue():
     time.sleep(0.5)
     input(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
     clear_terminal()
+
+def line_by_line(text, delay):
+    """
+    Split string into lines and print one by one
+    with chosen time delay between lines
+    """
+    for line in text.splitlines():
+        time.sleep(delay)
+        print(line.center(80))
 
 def main():
     create_questions()
