@@ -118,7 +118,7 @@ def intro_message():
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
 
 def how_to_play():
-    line_by_line(how_play, 0.03)
+    line_by_line(how_play, 0.03, "center")
     instructions = ["    Each question comes with four potential answers : A, B, C, and D.",
           "    Choose one by typing in the corresponding letter.",
           "    Each correct answer gives you one point.",
@@ -142,7 +142,7 @@ def request_name():
             print("        Silence, huh... Surely, you must have a name.")
         elif len(username) > 16: #Check if username is too long
             line_by_line("""I'm sorry, that's quite long and hard to pronounce. Please give me the short version.
-                         """, (0.3))
+                         """, (0.3), "indent")
         elif username.isnumeric(): #Check if username only contains numbers
             print(f"        {username}... Please enter a name, not your number.")
         elif not username.isalnum(): #Check if username contains invalid symbols
@@ -174,8 +174,7 @@ def show_high_score():
     score_board.add_rows(scores) # Write name and score to rows of text table
     score_board.set_cols_align(["c", "c"]) # Center text within table cells
     output = score_board.draw() # Turn the table into a string
-    for line in output.splitlines(): # Divide table into lines for centering purposes
-        print(line.center(80)) # Center and print each line from the table
+    line_by_line(output, 0.03, "center")
 
 def select_questions():
     """
@@ -211,7 +210,7 @@ def ask_question():
         # getting the index corresponding to the current question number
         print(f"{Fore.YELLOW}Question number {current_question+1}\n{Style.RESET_ALL}")
         time.sleep(0.2)
-        line_by_line(f"{question_list[question_selection[current_question]]}", 0.12)
+        line_by_line(f"{question_list[question_selection[current_question]]}", 0.12, "indent")
         time.sleep(0.2)
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
@@ -293,7 +292,7 @@ def game_over():
         choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N": # Display thank you message and stop the program
             clear_terminal()
-            line_by_line(thanks_for_playing, 0.02)
+            line_by_line(thanks_for_playing, 0.02, "none")
             exit()
         elif choice == "Y": # Start another round of the game
             clear_terminal()
@@ -407,14 +406,19 @@ def enter_to_continue():
     input(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
     clear_terminal()
 
-def line_by_line(text, delay):
+def line_by_line(text, delay, style):
     """
     Split string into lines and print one by one
     with chosen time delay between lines
     """
     for line in text.splitlines():
         time.sleep(delay)
-        print(f"        {line}")
+        if style == "indent":
+            print(f"        {line}")
+        elif style == "center":
+            print(f"{line.center(80)}")
+        else:
+            print(line)
 
 def main():
     create_questions()
