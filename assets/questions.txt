@@ -1,5 +1,6 @@
 D
 Which of the following countries is not in the Balkans?
+
 A: Albania
 B: Greece
 C: Montenegro
@@ -7,6 +8,7 @@ D: Slovakia
 
 C
 One of these countries does not use the cyrillic alphabet. Which?
+
 A: Moldova
 B: Ukraine
 C: Romania
@@ -14,6 +16,7 @@ D: Bulgaria
 
 B
 What dynasty ruled most of Europe for centuries?
+
 A: The Hamburgs
 B: The Habsburgs
 C: The Hausbergs
@@ -21,6 +24,7 @@ D: The Harsbergs
 
 D
 What is Sweden called in Swedish?
+
 A: Svedden
 B: Svecia
 C: Schweiz
@@ -28,6 +32,7 @@ D: Sverige
 
 B
 Which of the following countries does not have red in its flag?
+
 A: Albania
 B: Bosnia
 C: North Macedonia
@@ -35,6 +40,7 @@ D: Serbia
 
 A
 Ljubljana is the capital of what country?
+
 A: Slovenia
 B: Albania
 C: Czechia
@@ -42,6 +48,7 @@ D: Turkey
 
 D
 Which one of these countries is not a part of Scandinavia?
+
 A: Denmark
 B: Norway
 C: Sweden
@@ -49,6 +56,7 @@ D: Finland
 
 B
 Which of the following countries does not share a border with Russia?
+
 A: Norway
 B: Sweden
 C: Finland
@@ -56,6 +64,7 @@ D: Latvia
 
 C
 Which of these historical unions is made up?
+
 A: Austria-Hungary
 B: Poland-Lithuania
 C: Romania-Bulgaria
@@ -63,6 +72,7 @@ D: Czechoslovakia
 
 A
 What is Hungary called in Hungarian?
+
 A: Magyország
 B: Shqiperia
 C: Suomi
@@ -70,6 +80,7 @@ D: Deutschland
 
 A
 Two of these languages have distinct counting systems. Which?
+
 A: French and Danish
 B: Spanish and Portuguese
 C: Dutch and Polish
@@ -77,6 +88,7 @@ D: Italian and Croatian
 
 B
 "Strč prst skrz krk" is a valid sentence in what languages?
+
 A: Polish and Czech
 B: Czech and Slovak
 C: Slovak and Ukrainian
@@ -84,6 +96,7 @@ D: Ukraininan and Polish
 
 D
 Which is the smallest of the following countries?
+
 A: France
 B: Sweden
 C: Ukraine
@@ -91,6 +104,7 @@ D: Germany
 
 D
 Before its independence, the Netherlands belonged to what country?
+
 A: France
 B: Germany
 C: England
@@ -98,6 +112,7 @@ D: Spain
 
 C
 The westernmost country in Europe is...
+
 A: Ireland
 B: Spain
 C: Portugal
@@ -105,6 +120,7 @@ D: Iceland
 
 D
 Which one of these is an independent country?
+
 A: Catalonia
 B: Gibraltar
 C: Transdnistria
@@ -112,6 +128,7 @@ D: Liechtenstein
 
 B
 Which sea is not in Europe?
+
 A: Aegean sea
 B: Caspian sea
 C: Adriatic sea
@@ -119,6 +136,7 @@ D: Sea of Marmara
 
 A
 Which one of these is not a European mountain range?
+
 A: The Ligurian
 B: The Carpathian
 C: The Urals
@@ -126,6 +144,7 @@ D: The Pyrenées
 
 D
 What is the most populous country in Europe?
+
 A: Germany
 B: Great Britain
 C: Turkey
@@ -133,6 +152,7 @@ D: Russia
 
 C
 What is the biggest city in Europe
+
 A: Paris
 B: London
 C: Moscow
@@ -140,6 +160,7 @@ D: Madrid
 
 B
 What is the smallest sovereign state in Europe
+
 A: Monaco
 B: Vatican city
 C: Liechtenstein
@@ -147,6 +168,7 @@ D: San Marino
 
 A
 Which of these countries is not at all European?
+
 A: Jordan
 B: Armenia
 C: Kazakhstan
@@ -154,6 +176,7 @@ D: Georgia
 
 B
 Approximately how many people live in Europe?
+
 A: 680 million
 B: 740 million
 C: 820 million
@@ -161,6 +184,7 @@ D: 1 billion
 
 D
 What's the capital of Cyprus?
+
 A: Valletta
 B: Heraklion
 C: Ankara
@@ -168,6 +192,7 @@ D: Nicosia
 
 A
 The archipelago of Madeira belongs to what country?
+
 A: Portugal
 B: Spain
 C: Italy
@@ -175,6 +200,7 @@ D: Greece
 
 C
 Where do you find the cities of Zürich, Bern, and Winterthur?
+
 A: Germany
 B: Austria
 C: Switzerland
@@ -182,6 +208,7 @@ D: Netherlands
 
 B
 In which of these countries can you not visit the alps?
+
 A: Austria
 B: Andorra
 C: Slovenia

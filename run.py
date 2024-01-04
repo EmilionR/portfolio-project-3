@@ -30,7 +30,7 @@ username = ""
 question_list = [] # List of questions
 answer_list = [] # List of correct answers
 question_selection = [] # Selected questions for this round
-question_length = 7 # Determine how many lines to extract for each question
+question_length = 8 # Determine how many lines to extract for each question
 round_length = 15 # Number of questions per round of the game
 current_question = 0
 score = 0
@@ -258,21 +258,21 @@ def chatter(right_or_wrong):
     print(f"{Style.RESET_ALL}")
     # Reply with one of these remarks
     if rand1 == 0:
-        print("That is...")
+        print("        That is...")
         time.sleep(0.5)
-        print(f"{outcome}!")
+        print(f"        {outcome}!")
     elif rand1 == 1:
-        print(f"{username}...")
+        print(f"        {username}...")
         time.sleep(0.5)
-        print(f"That's {outcome}!")
+        print(f"        That's {outcome}!")
     elif rand1 == 2:
-        print(f"Ooooo...")
+        print(f"        Ooooo...")
         time.sleep(0.2)
-        print(f"{outcome} answer!")
+        print(f"        {outcome} answer!")
     elif rand1 == 3:
-        print(f"{outcome}!")
+        print(f"        {outcome}!")
     else:
-        print(f"Yeah, that's {outcome}")
+        print(f"        Yeah, that's {outcome}")
 
 
 def game_over():
@@ -303,28 +303,26 @@ def game_over_message():
     Messages differ depending on score
     """
     time.sleep(0.5)
-    print(f"{Fore.YELLOW}GAME OVER!\n\n")
+    print(f"{Fore.YELLOW}GAME OVER!".center(80))
     time.sleep(0.5)
-    print(f"Final score: {score}\n\n{Style.RESET_ALL}")
+    print(f"Final score: {score}\n\n{Style.RESET_ALL}".center(80))
     time.sleep(0.75)
     if score > 15:
-        print("This score is not possible without cheating...\n\n")
+        print("        This score is not possible without cheating...\n\n")
     elif score == 15:
-        print("WOOHOO! Full score!")
+        print("        WOOHOO! Full score!")
         time.sleep(0.3)
-        print("That's incredible!\n\n")
+        print("        That's incredible!\n\n")
     elif score > 10:
-        print("You did really well.\n\n")
+        print("        You did really well.\n\n")
     elif score > 7:
-        print("Not too shabby.\n\n")
+        print("        Not too shabby.\n\n")
     elif score > 0:
-        print("...")
-        time.sleep(0.2)
-        print("Better luck next time.\n\n")
+        print("        Better luck next time.\n\n")
     else:
-        print(f"I see...")
+        print(f"       I see...")
         time.sleep(0.3)
-        print("You're American, aren't you?\n\n")
+        print("        You're American, aren't you?\n\n")
     time.sleep(0.75)
 
 def update_high_score(scoreboard):
@@ -410,7 +408,7 @@ def line_by_line(text, delay):
     """
     for line in text.splitlines():
         time.sleep(delay)
-        print(line.center(80))
+        print(f"        {line}")
 
 def main():
     create_questions()
