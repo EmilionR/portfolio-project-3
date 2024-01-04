@@ -94,9 +94,10 @@ def intro_message():
           f"\n{Style.RESET_ALL}")
           
     while True: # Loop until valid input is given
-        print("1. Start Game\n"
-        "2. High Scores\n"
-        "3. How to Play\n")
+        menu_options  = ["1. Start Game", "2. High Scores", "3. How to Play"]
+        print(
+            f"{menu_options[0].center(80)}\n{menu_options[1].center(80)}\n{menu_options[2].center(80)}"
+        )
         choice = input(f"{Fore.CYAN}Please select(1, 2, or 3)\n\n{Fore.MAGENTA}")
         if choice == "1":
             clear_terminal()
@@ -122,12 +123,15 @@ def how_to_play():
           f"{Fore.BLUE}          #  # #. .# '## ##'     #   #   #   #'    #    #   #   #              \n"
           "          #  # `###`  #   #      #   `###`   #     #### #   #   #              \n"
           "\n"
-          f"\n{Style.RESET_ALL}"
-          "Each question comes with four potential answers : A, B, C, and D.\n"
-          "Choose one by typing in the corresponding letter.\n"
-          "Each correct answer gives you one point.\n"
-          "See if you can get them all right and get your name on the scoreboard.\n"
-          )
+          f"\n{Style.RESET_ALL}")
+    instructions = ["    Each question comes with four potential answers : A, B, C, and D.",
+          "    Choose one by typing in the corresponding letter.",
+          "    Each correct answer gives you one point.",
+          "    See if you can get them all right and get your name on the scoreboard."]
+    for i in range(len(instructions)):
+        time.sleep(0.1)
+        print(instructions[i])
+          
 
 def request_name():
     """
@@ -394,8 +398,9 @@ def enter_to_continue():
     Ask user to press enter
     Any input works
     """
+    enter_message = "[Press ENTER to continue]"
     time.sleep(0.5)
-    input(f"{Fore.CYAN}Press ENTER to continue\n\n{Fore.MAGENTA}")
+    input(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
     clear_terminal()
 
 def main():
