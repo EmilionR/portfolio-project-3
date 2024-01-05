@@ -99,13 +99,14 @@ def create_questions():
 
 def intro_screen():
     """
-    Displays game logo and welcome message
+    Displays game logo and main menu
     """
     choice = ""
 
     while True:  # Loop until valid input is given
-        line_by_line(game_logo, 0.01, "none") 
-        print( Fore.YELLOW + "\n", "Answer Questions about Europe".center(80, '-'),
+        line_by_line(game_logo, 0.01, "none")
+        print(Fore.YELLOW + "\n")
+        print("Answer Questions about Europe".center(80, '-'),
               f"\n\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
@@ -347,8 +348,8 @@ def game_over():
     compare_scores(score, get_high_scores())
     while True:  # Ask about restarting until given valid input
         time.sleep(0.5)
-        print(f"{Fore.CYAN}")
-        print("\n", f"Play Again?".center(80, "="), "\n")
+        print(Fore.CYAN + "\n")
+        print(f"Play Again?".center(80, "="), "\n")
         time.sleep(0.5)
         try:
             choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
