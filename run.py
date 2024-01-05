@@ -36,7 +36,7 @@ question_list = []  # List of questions
 answer_list = []  # List of correct answers
 question_selection = []  # Selected questions for this round
 question_length = 8  # Determine how many lines to extract for each question
-round_length = 15  # Number of questions per round of the game
+round_length = 1  # Number of questions per round of the game
 current_question = 0
 score = 0
 

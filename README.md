@@ -2,7 +2,6 @@
 
 ![Project-image]()
 
-
 [View the website here]()
 
 ## Contents
@@ -24,7 +23,8 @@
 
 * [Technologies Used](#Technologies-Used)
   * [Languages Used](#Languages-Used)
-  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+  * [Frameworks & Libraries](#frameworks--libraries)
+  * [Other Programs](#other-programs)
 
 * [Testing](#Testing)
   * [Solved Bugs](#solved-bugs)
@@ -118,7 +118,21 @@ __Returning visitor goals__
 
 Python
 
-### Frameworks, Libraries, & Programs used
+### Frameworks & Libraries
+
+gspread - For interacting with a google spreadsheet
+
+oauthlib - For authorization/credentials when using gspread
+
+random - For random number generation
+
+time - For time handling, I use it to delay prints for a line-by-line output
+
+texttable - For making a neat table of input, used for the highscore display
+
+colorama - For outputting text in different colors
+
+### Other Programs
 
 VSCode - Used for all the coding.
 
@@ -171,14 +185,21 @@ I also made much of the text appear line-by-line to make things more interesting
 
 ## Testing
 
-Please refer to [TESTING.md](documentation/TESTING.md) for testing documentation.
+Please refer to [TESTING.md](TESTING.md) for testing documentation.
 
 ## Credits
 
 ### Tutorials & Code Used
 
-https://www.toppr.com/guides/python-guide/references/methods-and-functions/methods/string/center/python-string-center/
+I learned the use of gspread and oauth from lessons by Code Institute.
+Other libraries and implementations were learned from official documentation and the examples found within them, as seen in the links below.
 
-https://pypi.org/project/texttable/
+[string.center()](https://www.w3schools.com/python/ref_string_center.asp)
 
-https://docs.python.org/3/library/getpass.html
+[time](https://docs.python.org/3/library/time.html)
+
+[texttable](https://pypi.org/project/texttable/)
+
+[getpass](https://docs.python.org/3/library/getpass.html)
+
+I learned about the terminal clearing special character from [this post on fullstack](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
