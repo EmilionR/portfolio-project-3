@@ -1,4 +1,4 @@
-# PP3
+# EuroQuiz
 
 ![Project-image](documentation/main-menu.png)
 
