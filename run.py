@@ -350,17 +350,22 @@ def game_over():
         print(f"{Fore.CYAN}")
         print("\n", f"Play Again?".center(80, "="), "\n")
         time.sleep(0.5)
-        choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
-        if choice == "N":  # Display thank you message and stop the program
-            clear_terminal()
-            line_by_line(thanks_for_playing, 0.02, "none")
-            exit()
-        elif choice == "Y":  # Start another round of the game
-            clear_terminal()
-            restart_game()
-            break
-        else:
-            print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
+        try:
+            choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
+            if choice == "N":  # Display thank you message and stop the program
+                clear_terminal()
+                line_by_line(thanks_for_playing, 0.02, "none")
+                exit()
+            elif choice == "Y":  # Start another round of the game
+                clear_terminal()
+                restart_game()
+                break
+            else:
+                print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
+        
+        except KeyboardInterrupt:
+            print(f"{Fore.RED}\n", "Control+C interrupted operation.",
+                f"\n{Style.RESET_ALL}")
 
 
 def game_over_message():
