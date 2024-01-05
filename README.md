@@ -127,6 +127,8 @@ __Returning visitor goals__
 
 Python
 
+The mock terminal, not made by me, is made with node.js (JavaScript library)
+
 ### Frameworks & Libraries
 
 gspread - For interacting with a google spreadsheet
