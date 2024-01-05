@@ -104,8 +104,7 @@ def intro_message():
     choice = ""
 
     while True:  # Loop until valid input is given
-        line_by_line(game_logo, 0.01, "none")
-        print(f"{Fore.YELLOW}\n")
+        line_by_line(game_logo, 0.01, "none") 
         print("Answer Questions about Europe".center(80, '-'),
               f"\n\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
@@ -144,6 +143,7 @@ def intro_message():
 def how_to_play():
     line_by_line(how_play, 0.03, "center")
     instructions = """
+        You must answer 15 questions.
         Each question has four potential answers : A, B, C, and D.
         Choose one by typing in the corresponding letter.",
         Each correct answer gives you one point.",
