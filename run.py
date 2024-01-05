@@ -34,7 +34,7 @@ question_list = []  # List of questions
 answer_list = []  # List of correct answers
 question_selection = []  # Selected questions for this round
 question_length = 8  # Determine how many lines to extract for each question
-round_length = 1  # Number of questions per round of the game
+round_length = 15  # Number of questions per round of the game
 current_question = 0
 score = 0
 
@@ -138,10 +138,10 @@ def request_name():
     Request player name input
     """
     global username
-    time.sleep(0.75)
+    time.sleep(0.2)
     print("        Welcome to the Europe Quiz!\n")
     while True:  # Keep requesting name until a valid name is given
-        time.sleep(0.75)
+        time.sleep(0.3)
         username = input(f"        What's your name?\n\n{Fore.MAGENTA}")
         print(f"{Style.RESET_ALL}")
         if username == "" or username.isspace():  # Check if name is left blank
@@ -158,9 +158,9 @@ def request_name():
         else:  # Accept username and continue
             time.sleep(0.5)
             print(f"\n        Welcome, {username}!")
-            time.sleep(0.5)
+            time.sleep(0.3)
             print("\n        Let's get started.\n")
-            time.sleep(1)
+            time.sleep(0.8)
             clear_terminal()
             break
 
@@ -226,8 +226,8 @@ def ask_question():
         print(f"{Fore.YELLOW}Question number {current_question+1}")
         print(f"{Style.RESET_ALL}")
         question = question_list[question_selection[current_question]]
-        time.sleep(0.2)
-        line_by_line(f"{question}", 0.12, "indent")
+        time.sleep(0.3)
+        line_by_line(f"{question}", 0.05, "indent")
         time.sleep(0.2)
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
@@ -334,7 +334,7 @@ def game_over_message():
     print(f"GAME OVER!".center(80, "~"))
     time.sleep(0.5)
     print(f"Final score: {score}\n\n{Style.RESET_ALL}".center(80))
-    time.sleep(0.75)
+    time.sleep(0.5)
     if score > 15:
         print("        This score is not possible without cheating...\n\n")
     elif score == 15:
@@ -433,7 +433,7 @@ def enter_to_continue():
     Any input works
     """
     enter_message = "[Press ENTER to continue]"
-    time.sleep(0.5)
+    time.sleep(0.3)
     input(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
     clear_terminal()
 
