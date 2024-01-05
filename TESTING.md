@@ -2,7 +2,7 @@
 
 ![Project-image]()
 
-Visit live deployed site: [EuroQuiz]()
+Visit live deployed site: [EuroQuiz](https://europe-quiz-pp3-b56221b33626.herokuapp.com/)
 
 * [Validation](#validator-testing)
 * [Manual Testing](#manual-testing)
@@ -11,7 +11,8 @@ Visit live deployed site: [EuroQuiz]()
 
 ## Validation
 
-
+I used PEP8 to validate the code. No errors were found, only minor remarks about spacing and line lenghts.
+For example, some inline comments needed more indentation and some lines were too long (in the code, not in the actual program's output). I addressed all these and the reading now comes back completely clean.
 
 ## Manual Testing
 
@@ -20,10 +21,13 @@ Visit live deployed site: [EuroQuiz]()
 __First Time Visitors__
 
 | Goals | How are they achieved? |
+| --- | --- |
+
 
 __Returning Visitors__
 
 |  Goals | How are they achieved? |
+| --- | --- |
 
 ### Full Testing
 
