@@ -7,8 +7,6 @@ import random
 import time
 # Texttable for highscore table
 from texttable import Texttable
-# Getpass import for better user input prompts
-import getpass
 # Colorama import for styling text
 from colorama import init as colorama_init
 from colorama import Fore, Style
@@ -107,8 +105,7 @@ def intro_message():
               f"\n\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
-        # Using getpass because input() does not wait or flush premature input
-        choice = getpass.getpass(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
+        choice = input(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
         if choice == "1":
             clear_terminal()
             start_round()
@@ -232,8 +229,7 @@ def ask_question():
         time.sleep(0.2)
         line_by_line(f"{question}", 0.12, "indent")
         time.sleep(0.2)
-        # Using getpass because input() does not wait or flush premature input
-        answer = getpass.getpass(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
+        answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
         if answer != "A" and answer != "B" and answer != "C" and answer != "D":
             print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
         else:
@@ -315,8 +311,7 @@ def game_over():
         print(f"{Fore.CYAN}")
         print("\n", f"Play Again?".center(80, "="), "\n")
         time.sleep(0.5)
-        # Using getpass because input() does not wait or flush premature input
-        choice = getpass.getpass(f"Y/N\n\n{Fore.MAGENTA}").upper()
+        choice = input(f"Y/N\n\n{Fore.MAGENTA}").upper()
         if choice == "N":  # Display thank you message and stop the program
             clear_terminal()
             line_by_line(thanks_for_playing, 0.02, "none")
@@ -439,8 +434,7 @@ def enter_to_continue():
     """
     enter_message = "[Press ENTER to continue]"
     time.sleep(0.5)
-    # Using getpass because input() does not wait or flush premature input
-    getpass.getpass(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
+    input(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
     clear_terminal()
 
 
