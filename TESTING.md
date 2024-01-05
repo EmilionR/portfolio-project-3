@@ -89,7 +89,6 @@ __High Scores__
 | --- | --- | --- | --- | --- |
 | Scoreboard | The scoreboard should display correctly and identically from the main menu and end of the round | Test the scoreboard from both positions repeatedly | Scoreboard appears as intended | Pass |
 | Scoreboard | The scoreboard should always come in a neat, centered table with enclosing borders | Test the scoreboard from both positions repeatedly | The scoreboard displays as intended | Pass |
-|  |  |  |  |  |
 | Scores | Scores should be correct and paired with the associated name as stored in the worksheet | Fill and clear the list between rounds, repeatedly | Scores show up as intended | Pass |
 | Scores | The scoreboard should always have 10 entries | Add entries to a full list | The list updates and never exceeds 10 entries | Pass |
 | Scores | Empty spots should be represented by "----" | Fill and clear the list between rounds, repeatedly | "----" appears as intended | Pass |
