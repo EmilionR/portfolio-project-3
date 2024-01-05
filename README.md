@@ -31,9 +31,8 @@
   * [Known Bugs](#unfixed-bugs)
   
 * [Credits](#Credits)
-  * [Content](#Content)
-  * [Media](#Media)
   * [Tutorials & Code Used](#tutorials--code-used)
+  * [Acknowledgements](#acknowledgements)
 
 ## How to Play
 
@@ -201,3 +200,8 @@ Other libraries and implementations were learned from official documentation and
 [texttable](https://pypi.org/project/texttable/)
 
 I learned about the terminal clearing special character from [this post on fullstack](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+
+### Acknowledgements
+
+Thanks to Erik Jädersten for helping with playtesting.
+Thanks to the helpful people in the Code Institute Slack room.
