@@ -2,7 +2,7 @@
 
 ![Project-image](documentation/main-menu.png)
 
-[View the website here]()
+[View the website here](https://europe-quiz-pp3-b56221b33626.herokuapp.com/)
 
 ## Contents
 
@@ -196,6 +196,22 @@ I also made much of the text appear line-by-line to make things more interesting
 
 Please refer to [TESTING.md](TESTING.md) for testing documentation.
 
+### Solved Bugs
+
+1. The game would sometimes crash when trying to load high scores if there were few or no entries in the list.
+2. Names in the first place of the scoreboard would lose their first letter when loaded into the game.
+3. Highscores would be reset when refreshing the page
+
+### Unfixed Bugs
+
+There is one annoying bug in this program, which lets impatient users input their answers while the program is still printing the questions. The program keeps the input buffered and handles it when the input prompt appears. I used a variety of solutions for this (some of which can be seen by looking at older deployments here at GitHub), but all had drawbacks that were ultimately worse than the original bug. For example, using getpass had a nearly ideal result except for the fact that it rendered all input invisible.
+
+Proper solutions require multiple imports and dependencies which are system specific, and I'd need to make sure the dependencies come through to the deployed project at heroku. And some linux builds will completely reject any attempt to mess with inputs. There are so many factors that simply cannot be tested within the context of this small project made for a Code Institute assignment.
+
+After a lot of Googling and asking around in the Code Institute's Slack room, I could not find any feasible solutions. Other people had the same issue, and I was told it was not a big deal. So, during my final mentoring session for the project, I was recommended to go back to regular input prompts and just explain the nature of this bug here.
+
+In the future, I will sort it out.
+
 ## Credits
 
 ### Tutorials & Code Used
@@ -209,7 +225,7 @@ Other libraries and implementations were learned from official documentation and
 
 [texttable](https://pypi.org/project/texttable/)
 
-I learned about the terminal clearing special character from [this post on fullstack](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+I learned about the terminal clearing special character from [this post on Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
 ### Acknowledgements
 
