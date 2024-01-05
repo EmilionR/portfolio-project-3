@@ -1,6 +1,6 @@
 # EuroQuiz - TESTING
 
-![Project-image]()
+![Project-image](documentation/main-menu.png)
 
 Visit live deployed site: [EuroQuiz](https://europe-quiz-pp3-b56221b33626.herokuapp.com/)
 

@@ -1,6 +1,6 @@
 # PP3
 
-![Project-image]()
+![Project-image](documentation/main-menu.png)
 
 [View the website here]()
 
@@ -59,27 +59,28 @@ This was achieved by using gspread through a Google Cloud API setup. The program
 ### Existing Features
 
 __GAME__
+![Game image](documentation/main-menu.png)
 
 The game features a fairly wide selection of questions. Each round randomizes which questions are used.
 This way, each round is unique and players can't cheat the game by simply restarting and memorizing a letter sequence.
 Each round has 15 questions before the final score is achieved and displayed.
 
 __QUESTIONS__
-
+![Question image](documentation/game.png)
 The questions are stored in a text file and extracted via a function that reads a certain number of lines at a time and stores that collection of lines as a variable in a list. The same function also extracts the correct answer and stores it together with the question in the list, so that each index in the list holds both a question and its answer.
 
 At the start of each round, the program generates a sequence of numbers, shuffles the numbers, and then uses this sequence to access questions from the list. The result is a differenct selection of questions for each round of the game. This number sequence hold as many numbers as there are questions in a round of the game. No duplicate numbers occurr, and numbers never exceed the number of available questions.
 
 __SCOREBOARD__
-
+![Scoreboard image](documentation/high-score.png)
 The game saves high scores, and players can view the scoreboard from the main menu. High scores are also on display at the end of each round. At the start of each game, the player gets to write their name. This name is what will go to the scoreboard if they get a good score. Only 10 scores are on display, and new high scores knock old ones down the list or delete them if they're no longer good enough.
 
 __SCORE SHEET__
-
+![Scor sheet image](documentation/score-sheet.png)
 The score sheet is a simple worksheet with two columns, one for the name and one for the score. The program only uses 10 rows, with one additional row for the headings. When scores are compared, the program extracts all high scores from the sheet into a list. After appending the current player's score to that list, the list is then sorted by score in descending order and trimmed to a maximum length of 10. Then, the program overwrites the cells in the worksheet.
 
 __INSTRUCTIONS__
-
+![Game image](documentation/how-play.png)
 The player can also view information on how to play from the starting screen of the game.
 
 ### Future Implementations
