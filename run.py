@@ -229,11 +229,28 @@ def ask_question():
         time.sleep(0.3)
         line_by_line(f"{question}", 0.05, "indent")
         time.sleep(0.2)
+        answer_question()
+        
+def answer_question():
+    """
+    Input and validate input
+    """
+    answer = ""
+    try:
         answer = input(f"{Fore.CYAN}Your answer:\n\n{Fore.MAGENTA}").upper()
-        if answer != "A" and answer != "B" and answer != "C" and answer != "D":
-            print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
-        else:
+        if answer == "A" or answer == "B" or answer == "C" or answer == "D":
             check_if_correct(answer)
+        else:
+            print(f"{Fore.RED}\n", "Please answer A, B, C, or D",
+              f"\n{Style.RESET_ALL}")
+
+    except ValueError:
+        print(f"{Fore.RED}\n", "Invalid input. Please answer A, B, C, or D",
+              f"\n{Style.RESET_ALL}")
+            
+    except KeyboardInterrupt:
+        print(f"{Fore.RED}\n", "Control+C interrupted operation.",
+              f"\n{Style.RESET_ALL}")
 
 
 def check_if_correct(answer):
