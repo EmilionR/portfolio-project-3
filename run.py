@@ -97,7 +97,7 @@ def create_questions():
             lines_counted = 0  # Reset the line counter to start new question
 
 
-def intro_message():
+def intro_screen():
     """
     Displays game logo and welcome message
     """
@@ -105,7 +105,7 @@ def intro_message():
 
     while True:  # Loop until valid input is given
         line_by_line(game_logo, 0.01, "none") 
-        print("Answer Questions about Europe".center(80, '-'),
+        print( Fore.YELLOW + "\n", "Answer Questions about Europe".center(80, '-'),
               f"\n\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
@@ -494,7 +494,7 @@ def line_by_line(text, delay, style):
 
 def main():
     create_questions()
-    intro_message()
+    intro_screen()
 
 
 main()

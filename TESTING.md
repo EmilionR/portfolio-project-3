@@ -22,12 +22,18 @@ __First Time Visitors__
 
 | Goals | How are they achieved? |
 | --- | --- |
-
+| The game should be easy to understand | The simple rules of the game are explained in the "How to play" section found on the main menu. |
+| All instructions should be clear and simple | All essential text is concise and free from big words, options are repeated to the player when relevant. |
+| I should be able to mess around without breaking the program | The game handles bad input without problems and does not break if played the wrong way. |
+| I should always know what input is expected and why my input gets rejected | The game always reminds the player of what to type. |
 
 __Returning Visitors__
 
 |  Goals | How are they achieved? |
 | --- | --- |
+| The game should not be a mere repetition of a set sequence of questions | The game features more than twice as many questions as the number asked in a round of the game. Each round uses a random selection of these in a random order. |
+| The game should keep track of results and let me look at the scoreboard | Scores are tracked on an external spreadsheet so that it cannot be tampered with or accidentally reset between sessions. The scoreboard persists and it's the same scoreboard for everyone.|
+| Program feedback should not be dull and boring | The game will randomly select and combine pieces of feedback for a more human, entertaining feel. |
 
 ### Full Testing
 
