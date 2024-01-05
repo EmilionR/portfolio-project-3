@@ -28,7 +28,7 @@
 
 * [Testing](#Testing)
   * [Solved Bugs](#solved-bugs)
-  * [Known Bugs](#unfixed-bugs)
+  * [Unfixed Bugs](#unfixed-bugs)
   
 * [Credits](#Credits)
   * [Tutorials & Code Used](#tutorials--code-used)
