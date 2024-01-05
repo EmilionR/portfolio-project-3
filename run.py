@@ -28,10 +28,12 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('euroquiz-highscores')
 high_scores = SHEET.worksheet('highscores')
 
+
 # Custom exception for try blocks
 class InvalidChoiceError(Exception):
     "Raised when an unintented input is given."
     pass
+
 
 # Global variables
 username = ""
@@ -45,6 +47,7 @@ score = 0
 
 # Load ASCII art
 ascii = open("assets/ascii.txt")
+
 
 def load_ascii(begin, stop):
     """
@@ -111,7 +114,8 @@ def intro_screen():
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
         try:
-            choice = input(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
+            select_message = "Please select (1, 2, 3)\n\n"
+            choice = input(f"{Fore.CYAN}{select_message}{Fore.MAGENTA}")
             if choice == "1":
                 clear_terminal()
                 start_round()
@@ -129,16 +133,16 @@ def intro_screen():
 
         except ValueError:
             print(f"{Fore.RED}\n", "Invalid input. Please choose 1, 2, or 3",
-                f"\n{Style.RESET_ALL}")
-        
+                  f"\n{Style.RESET_ALL}")
+
         except InvalidChoiceError:
             print(f"{Fore.RED}\n", "Invalid input. Please choose 1, 2, or 3",
-                f"\n{Style.RESET_ALL}")
+                  f"\n{Style.RESET_ALL}")
             time.sleep(0.4)
-                
+
         except KeyboardInterrupt:
             print(f"{Fore.RED}\n", "Control+C interrupted operation.",
-                f"\n{Style.RESET_ALL}")
+                  f"\n{Style.RESET_ALL}")
 
 
 def how_to_play():
@@ -250,7 +254,8 @@ def ask_question():
         line_by_line(f"{question}", 0.05, "indent")
         time.sleep(0.2)
         answer_question()
-        
+
+
 def answer_question():
     """
     Input and validate input
@@ -266,11 +271,11 @@ def answer_question():
     except ValueError:
         print(f"{Fore.RED}\n", "Invalid input. Please answer A, B, C, or D",
               f"\n{Style.RESET_ALL}")
-    
+
     except InvalidChoiceError:
         print(f"{Fore.RED}\n", "Invalid input. Please answer A, B, C, or D",
               f"\n{Style.RESET_ALL}")
-            
+
     except KeyboardInterrupt:
         print(f"{Fore.RED}\n", "Control+C interrupted operation.",
               f"\n{Style.RESET_ALL}")
@@ -363,10 +368,10 @@ def game_over():
                 break
             else:
                 print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
-        
+
         except KeyboardInterrupt:
             print(f"{Fore.RED}\n", "Control+C interrupted operation.",
-                f"\n{Style.RESET_ALL}")
+                  f"\n{Style.RESET_ALL}")
 
 
 def game_over_message():
