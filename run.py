@@ -99,11 +99,10 @@ def intro_message():
     choice = ""
 
     while True:  # Loop until valid input is given
-        print(game_logo)
-        print(f"{Fore.YELLOW}",
-              "Answer Questions about Europe".center(80, '-'),
-              "\n",
-              f"\n{Style.RESET_ALL}")
+        line_by_line(game_logo, 0.01, "none")
+        print(f"{Fore.YELLOW}\n")
+        print("Answer Questions about Europe".center(80, '-'),
+              f"\n\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
         choice = input(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
