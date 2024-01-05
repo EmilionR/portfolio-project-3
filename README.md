@@ -200,6 +200,4 @@ Other libraries and implementations were learned from official documentation and
 
 [texttable](https://pypi.org/project/texttable/)
 
-[getpass](https://docs.python.org/3/library/getpass.html)
-
 I learned about the terminal clearing special character from [this post on fullstack](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)

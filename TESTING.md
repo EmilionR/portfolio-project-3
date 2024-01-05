@@ -44,4 +44,8 @@ __Returning Visitors__
 
 ### Unfixed Bugs
 
-There are no known bugs currently in the program.
+There is one annoying bug in this program, which lets impatient users input their answers while the program is still printing the questions. The program keeps the input buffered and handles it when the input prompt appears. I used a variety of solutions for this (some of which can be seen by looking at older deployments here at GitHub), but all had drawbacks that were ultimately worse than the original bug. For example, using getpass had a nearly ideal result except for the fact that it rendered all input invisible.
+
+Proper solutions require multiple imports and dependencies which are system specific, and I'd need to make sure the dependencies come through to the deployed project at heroku. And some linux builds will completely reject any attempt to mess with inputs. There are so many factors that simply cannot be tested within the context of this small project made for a Code Institute assignment.
+
+So, during my final mentoring session for the project, I was recommended to return the code to its original state and explain the nature of this bug here.
