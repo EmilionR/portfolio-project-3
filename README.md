@@ -21,11 +21,6 @@
 * [Deployment](#Deployment)
 
 * [Design](#Design)
-  * [Colour Scheme](#Colour-Scheme)
-  * [Typography](#Typography)
-  * [Images](#Images)
-  * [Wireframe](#wireframe)
-  * [Accessibility](#Accessibility)
 
 * [Technologies Used](#Technologies-Used)
   * [Languages Used](#Languages-Used)
@@ -167,9 +162,16 @@ The Application has been deployed from GitHub to Heroku following the steps:
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
+## Design
+
+While this is a simple command line-based application, I wanted to make the design feel more interesting and also distinguish between different elements of the text output.
+For example, anything typed by the user will appear in a magenta color, while prompts for input appear in cyan. The questions and commentary come in plain white text with an indentation, while general infomration is yellow and centered.
+
+I also made much of the text appear line-by-line to make things more interesting and also let the user take things in at some points.
+
 ## Testing
 
-Please refer to [TESTING.md](TESTING.md) for testing documentation.
+Please refer to [TESTING.md](documentation/TESTING.md) for testing documentation.
 
 ## Credits
 
