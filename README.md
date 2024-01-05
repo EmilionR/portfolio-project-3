@@ -178,3 +178,5 @@ Please refer to [TESTING.md](TESTING.md) for testing documentation.
 https://www.toppr.com/guides/python-guide/references/methods-and-functions/methods/string/center/python-string-center/
 
 https://pypi.org/project/texttable/
+
+https://docs.python.org/3/library/getpass.html
