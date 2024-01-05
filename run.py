@@ -12,7 +12,6 @@ from colorama import init as colorama_init
 from colorama import Fore, Style
 colorama_init()
 
-
 # Scope of APIs to run
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -29,6 +28,12 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('euroquiz-highscores')
 high_scores = SHEET.worksheet('highscores')
 
+# Custom exception for try blocks
+class InvalidChoiceError(Exception):
+    "Raised when an unintented input is given."
+    pass
+
+# Global variables
 username = ""
 question_list = []  # List of questions
 answer_list = []  # List of correct answers
@@ -105,21 +110,35 @@ def intro_message():
               f"\n\n{Style.RESET_ALL}")
         menu_options = "1. Start Game\n2. High Scores\n3. How to Play\n\n"
         line_by_line(menu_options, 0.04, "center")
-        choice = input(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
-        if choice == "1":
-            clear_terminal()
-            start_round()
-            break
-        elif choice == "2":
-            clear_terminal()
-            show_high_score()
-            enter_to_continue()
-        elif choice == "3":
-            clear_terminal()
-            how_to_play()
-            enter_to_continue()
-        else:
-            print(f"\n{Fore.RED}ERROR: Invalid input.\n{Style.RESET_ALL}")
+        try:
+            choice = input(f"{Fore.CYAN}Please select (1, 2, 3)\n\n{Fore.MAGENTA}")
+            if choice == "1":
+                clear_terminal()
+                start_round()
+                break
+            elif choice == "2":
+                clear_terminal()
+                show_high_score()
+                enter_to_continue()
+            elif choice == "3":
+                clear_terminal()
+                how_to_play()
+                enter_to_continue()
+            else:
+                raise InvalidChoiceError
+
+        except ValueError:
+            print(f"{Fore.RED}\n", "Invalid input. Please choose 1, 2, or 3",
+                f"\n{Style.RESET_ALL}")
+        
+        except InvalidChoiceError:
+            print(f"{Fore.RED}\n", "Invalid input. Please choose 1, 2, or 3",
+                f"\n{Style.RESET_ALL}")
+            time.sleep(0.4)
+                
+        except KeyboardInterrupt:
+            print(f"{Fore.RED}\n", "Control+C interrupted operation.",
+                f"\n{Style.RESET_ALL}")
 
 
 def how_to_play():
@@ -241,10 +260,13 @@ def answer_question():
         if answer == "A" or answer == "B" or answer == "C" or answer == "D":
             check_if_correct(answer)
         else:
-            print(f"{Fore.RED}\n", "Please answer A, B, C, or D",
-              f"\n{Style.RESET_ALL}")
+            raise InvalidChoiceError
 
     except ValueError:
+        print(f"{Fore.RED}\n", "Invalid input. Please answer A, B, C, or D",
+              f"\n{Style.RESET_ALL}")
+    
+    except InvalidChoiceError:
         print(f"{Fore.RED}\n", "Invalid input. Please answer A, B, C, or D",
               f"\n{Style.RESET_ALL}")
             
