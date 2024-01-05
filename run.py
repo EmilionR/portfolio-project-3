@@ -145,8 +145,8 @@ def how_to_play():
     instructions = """
         You must answer 15 questions.
         Each question has four potential answers : A, B, C, and D.
-        Choose one by typing in the corresponding letter.",
-        Each correct answer gives you one point.",
+        Choose one by typing in the corresponding letter.
+        Each correct answer gives you one point.
         Try to get them all right and reach the top of the scoreboard."""
     print(f"{Style.RESET_ALL}")
     line_by_line(instructions, 0.05, "none")
