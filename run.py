@@ -250,9 +250,9 @@ def ask_question():
         print(f"{Fore.YELLOW}Question number {current_question+1}")
         print(f"{Style.RESET_ALL}")
         question = question_list[question_selection[current_question]]
-        time.sleep(0.3)
+        time.sleep(0.1)
         line_by_line(f"{question}", 0.05, "indent")
-        time.sleep(0.2)
+        time.sleep(0.1)
         answer_question()
 
 
@@ -483,7 +483,7 @@ def enter_to_continue():
     Any input works
     """
     enter_message = "[Press ENTER to continue]"
-    time.sleep(0.3)
+    time.sleep(0.15)
     input(f"{Fore.CYAN}\n{enter_message.center(80)}\n\n{Fore.MAGENTA}")
     clear_terminal()
 
